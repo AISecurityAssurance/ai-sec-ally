@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -62,38 +62,17 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Phone</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                </div>
-              </div>
               
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Office</h4>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <h4 className="font-semibold text-foreground">Location</h4>
+                  <p className="text-muted-foreground">United States (Remote First)</p>
                 </div>
               </div>
             </div>
-            
-            <Card className="bg-card/20 border-border backdrop-blur-sm">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-2">Enterprise Solutions</h4>
-                <p className="text-muted-foreground mb-4">
-                  Need custom security solutions for your enterprise? We offer tailored AI security platforms.
-                </p>
-                <Button variant="outline" className="w-full">
-                  Schedule Consultation
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

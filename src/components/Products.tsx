@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, ShieldCheck, Zap, Target, AlertTriangle, BarChart3 } from "lucide-react";
 
-const Features = () => {
+const Products = () => {
   const features = [
     {
       icon: Brain,
@@ -36,14 +36,14 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-muted/20">
+    <section id="products" className="py-24 bg-muted/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Powerful AI Security Tools
+            AI Security Products in Development
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our comprehensive suite of AI-powered security tools provides everything your team needs to maintain robust cybersecurity.
+            We're building the next generation of AI-powered security solutions to revolutionize how teams protect their systems.
           </p>
         </div>
         
@@ -71,4 +71,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Products;

@@ -5,7 +5,7 @@ const Products = () => {
   const products = [
     {
       icon: Brain,
-      title: "Security Analysis Platform",
+      title: "Security Assurance Platform",
       description: "AI-assisted security analysis using STPA-Sec, STRIDE, PASTA, and MAESTRO methodologies to identify and assess system vulnerabilities comprehensively."
     },
     {

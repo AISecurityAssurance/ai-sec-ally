@@ -10,8 +10,8 @@ const Products = () => {
     },
     {
       icon: ShieldCheck,
-      title: "Testing Arena",
-      description: "Advanced testing environment powered by AI-assisted DREAD, OCTAVE, and HAZOP analysis tools for thorough security validation and risk assessment."
+      title: "Cortex Arena",
+      description: "Advanced testing environment powered by AI-assisted DREAD, OCTAVE, and HAZOP, STRIDE, etc analysis tools for thorough security architecture validation and risk assessment."
     }
   ];
 

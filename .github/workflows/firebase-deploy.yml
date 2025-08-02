@@ -46,46 +46,20 @@ jobs:
       env:
         CI: false  # Treat warnings as warnings, not errors
 
+    - name: Setup Firebase CLI
+      run: npm install -g firebase-tools
+
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
     - name: Deploy to Firebase
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-      uses: FirebaseExtended/action-firebase-deploy@v0
-      with:
-        repoToken: ${{ secrets.GITHUB_TOKEN }}
-        firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-        projectId: active-tome-467816-s6
-        channelId: live
+      run: |
+        firebase deploy --only hosting --project active-tome-467816-s6
 
     - name: Deploy to Firebase Preview (for PRs)
       if: github.event_name == 'pull_request'
-      uses: FirebaseExtended/action-firebase-deploy@v0
-      with:
-        repoToken: ${{ secrets.GITHUB_TOKEN }}
-        firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-        projectId: active-tome-467816-s6
-        channelId: preview
-
-    - name: Comment PR with preview URL
-      if: github.event_name == 'pull_request'
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const { data: comments } = await github.rest.issues.listComments({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: context.issue.number,
-          });
-          
-          const botComment = comments.find(comment => 
-            comment.user.type === 'Bot' && 
-            comment.body.includes('Firebase Preview')
-          );
-          
-          if (!botComment) {
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '🚀 **Firebase Preview Deployed!** Check out your changes at the preview URL above.'
-            });
-          }
-
+      run: |
+        firebase hosting:channel:deploy pr-${{ github.event.number }} --project active-tome-467816-s6 --expires 7d

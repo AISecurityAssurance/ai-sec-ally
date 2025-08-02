@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-security.jpg";
@@ -38,13 +40,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="group">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg">
-              Learn More
-            </Button>
+            <Link to="/about">
+              <Button variant="outline" size="lg">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

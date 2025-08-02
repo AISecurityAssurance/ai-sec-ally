@@ -55,26 +55,8 @@ const About = () => {
                 Our Mission
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                At AI Security Assurance, we believe that advanced artificial
-                intelligence should be accessible to every security team. Our
-                mission is to democratize enterprise-grade security analysis
-                tools, making sophisticated security architecture review and
-                risk assessment available to organizations of all sizes.
+                Our mission is to empower security professionals and automated systems with AI-driven tools that streamline systems security engineering and threat modeling.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Target className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-foreground">
-                    AI-Powered Analysis
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Zap className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-foreground">
-                    Real-time Detection
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -139,14 +121,24 @@ const About = () => {
                   Co-Founder & CEO
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  [Your Name Here]
+                  Lori Pickering
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center leading-relaxed">
-                  [Add your background and expertise in cybersecurity, AI, or
-                  relevant fields. Mention your vision for the company and what
-                  drives your passion for security innovation.]
+                  Lori is a machine learning engineer and researcher pioneering the automation of 
+                  security analysis through AI. She holds dual master's degrees in Computer 
+                  and Biomedical Forensic Science, with her thesis focusing on Systems 
+                  Theoretic Process Analysis for Security (STPA-Sec) and formal methods for 
+                  proving complete mediation properties. Her unique educational foundation also 
+                  includes a B.S. in Physics and Applied Computational Mathematics. Currently serving as a 
+                  Machine Learning Engineer at a hardware cybersecurity and assurance company, 
+                  she previously held positions at the Air Force Research Laboratory Information 
+                  Directorate and as a Research Assistant at Syracuse University. With deep 
+                  expertise in both AI/ML and systems security engineering, Lori is passionate about 
+                  automating mission and systems assurance methodologies. As Co-founder and CEO, she 
+                  leads the company's vision to transform how organizations approach security analysis 
+                  by leveraging cutting-edge AI to make comprehensive security frameworks accessible and actionable.
                 </p>
               </CardContent>
             </Card>
@@ -170,7 +162,17 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center leading-relaxed">
-                  Alvin builds the tech alongside Lori, handling everything from security to scaling. With a background and passion for cybersecurity and AI, they’re focused on solving real problems with practical, no-nonsense solutions.
+                  Alvin is a security engineer and researcher passionate about advancing the 
+                  intersection of AI and cybersecurity. He holds an M.S. in Computer Science, 
+                  where his thesis focused on zero-knowledge proof systems, and a B.S. in 
+                  Computer Science and Cybersecurity. Currently serving as an Associate Security 
+                  Engineer at a Fortune 500 company, Alvin specializes in application security 
+                  and security architecture. His expertise in threat modeling and security 
+                  frameworks drives our mission to revolutionize how organizations approach 
+                  security analysis through AI automation. As Co-founder and CTO, Alvin leads 
+                  the technical development of our security analysis platforms, bringing rigorous 
+                  academic research and enterprise security experience to create tools that make 
+                  comprehensive security analysis faster and more accessible.
                 </p>
               </CardContent>
             </Card>

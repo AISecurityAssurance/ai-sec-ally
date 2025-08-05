@@ -1,10 +1,67 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Loader2 } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://us-east1-active-tome-467816-s6.cloudfunctions.net/submitContactForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: result.message || "We'll get back to you within 24 hours.",
+        });
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          message: ""
+        });
+      } else {
+        throw new Error(result.error || "Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section className="py-24 bg-gradient-primary">
       <div className="container mx-auto px-6">
@@ -25,21 +82,68 @@ const Contact = () => {
                 We'll get back to you within 24 hours.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input placeholder="First name" className="bg-background/50" />
-                <Input placeholder="Last name" className="bg-background/50" />
-              </div>
-              <Input placeholder="Email address" className="bg-background/50" />
-              <Input placeholder="Company" className="bg-background/50" />
-              <Textarea 
-                placeholder="Tell us about your security needs..." 
-                rows={4}
-                className="bg-background/50"
-              />
-              <Button variant="hero" size="lg" className="w-full">
-                Send Message
-              </Button>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input 
+                    name="firstName"
+                    placeholder="First name" 
+                    className="bg-background/50" 
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <Input 
+                    name="lastName"
+                    placeholder="Last name" 
+                    className="bg-background/50" 
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <Input 
+                  name="email"
+                  type="email"
+                  placeholder="Email address" 
+                  className="bg-background/50" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+                <Input 
+                  name="company"
+                  placeholder="Company" 
+                  className="bg-background/50" 
+                  value={formData.company}
+                  onChange={handleInputChange}
+                />
+                <Textarea 
+                  name="message"
+                  placeholder="Tell us about your security needs..." 
+                  rows={4}
+                  className="bg-background/50"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
+                <Button 
+                  type="submit" 
+                  variant="hero" 
+                  size="lg" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
+                </Button>
+              </form>
             </CardContent>
           </Card>
           

@@ -42,8 +42,6 @@ jobs:
         service_account: 'github-action-1025222256@active-tome-467816-s6.iam.gserviceaccount.com'
 
     - name: Deploy to Firebase
-      uses: 'firebase/firebase-tools@v1'
-      with:
-        args: deploy --only hosting,functions
+      run: npx firebase-tools deploy --only hosting,functions
       env:
         PROJECT_ID: active-tome-467816-s6

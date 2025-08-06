@@ -48,4 +48,4 @@ jobs:
     - name: Deploy to Firebase
       run: firebase deploy --only hosting,functions --project active-tome-467816-s6
       env:
-        FIREBASE_TOKEN: ${{ steps.auth.outputs.access_token }} # Use the output from the auth step
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_CI_TOKEN }} # Use the output from the auth step

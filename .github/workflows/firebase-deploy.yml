@@ -36,6 +36,7 @@ jobs:
       working-directory: ./functions
 
     - name: Authenticate to Google Cloud
+      id: 'auth' # Add an ID to this step
       uses: 'google-github-actions/auth@v2'
       with:
         workload_identity_provider: 'projects/717462094965/locations/global/workloadIdentityPools/github-provider/providers/github-provider'
@@ -45,3 +46,4 @@ jobs:
       run: npx firebase-tools deploy --only hosting,functions
       env:
         GCLOUD_PROJECT: active-tome-467816-s6
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }} # Use the output from the auth step

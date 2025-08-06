@@ -2,7 +2,7 @@ import {onRequest} from "firebase-functions/v2/https";
 import {setGlobalOptions} from "firebase-functions/v2";
 import {defineSecret} from "firebase-functions/params";
 import * as admin from "firebase-admin";
-import * as nodemailer from "nodemailer";
+import * as sgMail from "@sendgrid/mail";
 import {Request, Response} from "express";
 
 // Initialize Firebase Admin
@@ -12,9 +12,9 @@ admin.initializeApp();
 setGlobalOptions({maxInstances: 10});
 
 // Define secrets
-const gmailEmail = defineSecret("GMAIL_EMAIL");
-const gmailPassword = defineSecret("GMAIL_PASSWORD");
+const sendGridApiKey = defineSecret("SENDGRID_API_KEY");
 const contactEmail = defineSecret("CONTACT_EMAIL");
+
 
 // CORS helper function
 const corsHandler = (req: Request, res: Response) => {
@@ -38,13 +38,13 @@ const isValidEmail = (email: string): boolean => {
 };
 
 // Main contact form handler
-export const submitContactForm = onRequest({
+export const contactForm = onRequest({
   region: "us-east1",
   maxInstances: 10,
   timeoutSeconds: 60,
   memory: "256MiB",
   cors: true,
-  secrets: [gmailEmail, gmailPassword, contactEmail]
+  secrets: [sendGridApiKey, contactEmail]
 }, async (req: Request, res: Response) => {
   // Handle CORS
   if (corsHandler(req, res)) return;
@@ -72,29 +72,22 @@ export const submitContactForm = onRequest({
     }
 
     // Get configuration from secrets
-    const gmailEmailValue = gmailEmail.value();
-    const gmailPasswordValue = gmailPassword.value();
+    const sendGridApiKeyValue = sendGridApiKey.value();
     const contactEmailValue = contactEmail.value() || "contact@aisecurityassurance.com";
 
-    if (!gmailEmailValue || !gmailPasswordValue) {
-      console.error("Missing email configuration");
+    if (!sendGridApiKeyValue) {
+      console.error("Missing SendGrid API Key");
       res.status(500).json({ error: "Server configuration error" });
       return;
     }
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: gmailEmailValue,
-        pass: gmailPasswordValue,
-      },
-    });
+    // Set SendGrid API Key
+    sgMail.setApiKey(sendGridApiKeyValue);
 
     // Email content
-    const mailOptions = {
-      from: gmailEmailValue,
+    const msg = {
       to: contactEmailValue,
+      from: "contact@aisecurityassurance.com", // This must be a verified sender
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -109,7 +102,7 @@ export const submitContactForm = onRequest({
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    await sgMail.send(msg);
 
     // Optional: Store in Firestore for backup/analytics
     await admin.firestore().collection("contact-submissions").add({
@@ -124,15 +117,15 @@ export const submitContactForm = onRequest({
     });
 
     // Success response
-    res.status(200).json({ 
-      success: true, 
-      message: "Thank you! Your message has been sent successfully." 
+    res.status(200).json({
+      success: true,
+      message: "Thank you! Your message has been sent successfully."
     });
 
   } catch (error) {
     console.error("Contact form error:", error);
-    res.status(500).json({ 
-      error: "Failed to send message. Please try again later." 
+    res.status(500).json({
+      error: "Failed to send message. Please try again later."
     });
   }
 });
@@ -143,9 +136,9 @@ export const healthCheck = onRequest({
   cors: true
 }, (req: Request, res: Response) => {
   if (corsHandler(req, res)) return;
-  
-  res.status(200).json({ 
-    status: "healthy", 
-    timestamp: new Date().toISOString() 
+
+  res.status(200).json({
+    status: "healthy",
+    timestamp: new Date().toISOString()
   });
 });

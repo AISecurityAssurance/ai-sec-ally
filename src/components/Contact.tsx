@@ -26,7 +26,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://us-east1-active-tome-467816-s6.cloudfunctions.net/submitContactForm", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

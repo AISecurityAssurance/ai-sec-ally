@@ -44,7 +44,8 @@ export const contactForm = onRequest({
   timeoutSeconds: 60,
   memory: "256MiB",
   cors: true,
-  secrets: [sendGridApiKey, contactEmail]
+  secrets: [sendGridApiKey, contactEmail],
+  invoker: "public"
 }, async (req: Request, res: Response) => {
   // Handle CORS
   if (corsHandler(req, res)) return;

@@ -45,11 +45,7 @@ jobs:
     - name: Install Firebase Tools
       run: npm install -g firebase-tools
 
-    - name: Get Firebase Access Token
-      id: get_token
-      run: echo "FIREBASE_TOKEN=$(gcloud auth print-access-token)" >> $GITHUB_ENV
-
     - name: Deploy to Firebase
       run: firebase deploy --only hosting,functions --project active-tome-467816-s6
       env:
-        FIREBASE_TOKEN: ${{ env.FIREBASE_TOKEN }} # Use the output from the auth step
+        FIREBASE_TOKEN: ${{ steps.auth.outputs.access_token }} # Use the output from the auth step

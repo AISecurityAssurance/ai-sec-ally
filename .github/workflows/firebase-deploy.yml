@@ -46,7 +46,6 @@ jobs:
       run: npm install -g firebase-tools
 
     - name: Deploy to Firebase
-      run: firebase deploy --only hosting,functions
+      run: firebase deploy --only hosting,functions --project active-tome-467816-s6
       env:
-        GCLOUD_PROJECT: active-tome-467816-s6
         GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }} # Use the output from the auth step

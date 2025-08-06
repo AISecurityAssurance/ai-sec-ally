@@ -44,4 +44,4 @@ jobs:
     - name: Deploy to Firebase
       run: npx firebase-tools deploy --only hosting,functions
       env:
-        PROJECT_ID: active-tome-467816-s6
+        GCLOUD_PROJECT: active-tome-467816-s6

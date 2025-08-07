@@ -147,20 +147,3 @@ export const healthCheck = onRequest({
     timestamp: new Date().toISOString()
   });
 });
-
-
-// Add this new function for testing purposes
-export const testFirestoreWrite = onRequest(async (req, res) => {
-  try {
-    const docRef = admin.firestore().collection("test-writes").doc("test-doc");
-    await docRef.set({
-      timestamp: new Date(),
-      success: true,
-    });
-    console.log("Successfully wrote to Firestore!");
-    res.status(200).send("Successfully wrote to Firestore!");
-  } catch (error) {
-    console.error("Minimal Firestore write failed:", error);
-    res.status(500).send("Failed to write to Firestore.");
-  }
-});

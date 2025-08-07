@@ -2,7 +2,7 @@ import {onRequest} from "firebase-functions/v2/https";
 import {setGlobalOptions} from "firebase-functions/v2";
 import {defineSecret} from "firebase-functions/params";
 import * as admin from "firebase-admin";
-import * as sgMail from "@sendgrid/mail";
+import sgMail from "@sendgrid/mail";
 import {Request, Response} from "express";
 
 // Initialize Firebase Admin

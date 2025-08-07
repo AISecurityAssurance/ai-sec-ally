@@ -42,14 +42,10 @@ jobs:
         workload_identity_provider: 'projects/717462094965/locations/global/workloadIdentityPools/github-provider/providers/github-provider'
         service_account: 'github-action-1025222256@active-tome-467816-s6.iam.gserviceaccount.com'
 
-    - name: Install Firebase Tools
-      run: npm install -g firebase-tools
-
     - name: Deploy to Firebase
-      run: |
-        CREDENTIALS_FILE="$(mktemp)"
-        echo "${{ steps.auth.outputs.credentials_file_path }}" > "$CREDENTIALS_FILE"
-        export GOOGLE_APPLICATION_CREDENTIALS="$CREDENTIALS_FILE"
-        firebase deploy --only hosting,functions --project active-tome-467816-s6
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting,functions
+        project_id: active-tome-467816-s6
       env:
-        GCLOUD_PROJECT: active-tome-467816-s6 # Use the output from the auth step
+        GCP_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }} # Use the output from the auth step

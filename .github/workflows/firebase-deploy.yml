@@ -36,10 +36,11 @@ jobs:
       working-directory: ./functions
 
     - name: Authenticate to Google Cloud
-      id: 'auth' # Add an ID to this step
+      id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
-        workload_identity_provider: 'projects/717462094965/locations/global/workloadIdentityPools/github-provider/providers/github-provider'
+        # CORRECTED PATH: Points to the pool, not the provider within the pool.
+        workload_identity_provider: 'projects/717462094965/locations/global/workloadIdentityPools/github-provider'
         service_account: 'github-action-1025222256@active-tome-467816-s6.iam.gserviceaccount.com'
 
     - name: Install Firebase Tools

@@ -42,14 +42,10 @@ jobs:
         workload_identity_provider: 'projects/717462094965/locations/global/workloadIdentityPools/github-provider/providers/github-provider'
         service_account: 'github-action-1025222256@active-tome-467816-s6.iam.gserviceaccount.com'
 
-    - name: Set up gcloud CLI
-      uses: 'google-github-actions/setup-gcloud@v2'
-      with:
-        project_id: active-tome-467816-s6
+    - name: Install Firebase Tools
+      run: npm install -g firebase-tools
 
-    - name: Activate Service Account
-      run: |
-        gcloud auth activate-service-account --key-file=${{ steps.auth.outputs.credentials_file_path }}
-
-    - name: Deploy to Firebase
-      run: firebase deploy --only hosting,functions # Use the output from the auth step
+        - name: Deploy to Firebase
+      run: firebase deploy --only hosting,functions
+      env:
+        FIREBASE_TOKEN: ${{ steps.auth.outputs.access_token }}

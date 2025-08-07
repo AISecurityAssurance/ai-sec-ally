@@ -1,6 +1,6 @@
 import {onRequest} from "firebase-functions/v2/https";
 import {setGlobalOptions} from "firebase-functions/v2";
-import {defineSecret} from "firebase-functions/params";
+// import {defineSecret} from "firebase-functions/params";
 import * as admin from "firebase-admin";
 import sgMail from "@sendgrid/mail";
 import {Request, Response} from "express";
@@ -14,6 +14,8 @@ setGlobalOptions({maxInstances: 10});
 // Define secrets
 // const sendGridApiKey = defineSecret("SENDGRID_API_KEY"); # Not working
 // const contactEmail = defineSecret("CONTACT_EMAIL"); # Not working
+const contactEmailValue = process.env.CONTACT_EMAIL || "contact@aisecurityassurance.com";
+
 
 
 // CORS helper function
@@ -76,7 +78,7 @@ export const contactForm = onRequest({
     // Get configuration from secrets
     // const sendGridApiKeyValue = sendGridApiKey.value();
     const sendGridApiKeyValue = process.env.SENDGRID_API_KEY;
-    const contactEmailValue = contactEmail.value() || "contact@aisecurityassurance.com";
+    // const contactEmailValue = contactEmail.value() || "contact@aisecurityassurance.com";
 
     if (!sendGridApiKeyValue) {
       console.error("Missing SendGrid API Key");

@@ -12,6 +12,10 @@
         "function": "contactForm"
       },
       {
+        "source": "/api/test",
+        "function": "testFirestoreWrite"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

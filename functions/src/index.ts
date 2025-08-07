@@ -12,7 +12,7 @@ admin.initializeApp();
 setGlobalOptions({maxInstances: 10});
 
 // Define secrets
-const sendGridApiKey = defineSecret("SENDGRID_API_KEY");
+// const sendGridApiKey = defineSecret("SENDGRID_API_KEY"); # Not working
 const contactEmail = defineSecret("CONTACT_EMAIL");
 
 
@@ -44,7 +44,7 @@ export const contactForm = onRequest({
   timeoutSeconds: 60,
   memory: "256MiB",
   cors: true,
-  secrets: [sendGridApiKey, contactEmail],
+  // secrets: [sendGridApiKey, contactEmail], // Not working with v2
   invoker: "public"
 }, async (req: Request, res: Response) => {
   // Handle CORS
@@ -73,7 +73,8 @@ export const contactForm = onRequest({
     }
 
     // Get configuration from secrets
-    const sendGridApiKeyValue = sendGridApiKey.value();
+    // const sendGridApiKeyValue = sendGridApiKey.value();
+    const sendGridApiKeyValue = process.env.SENDGRID_API_KEY;
     const contactEmailValue = contactEmail.value() || "contact@aisecurityassurance.com";
 
     if (!sendGridApiKeyValue) {

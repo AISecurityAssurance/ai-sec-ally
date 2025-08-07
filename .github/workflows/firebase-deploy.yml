@@ -45,7 +45,7 @@ jobs:
     - name: Install Firebase Tools
       run: npm install -g firebase-tools
 
-        - name: Deploy to Firebase
+    - name: Deploy to Firebase
       run: firebase deploy --only hosting,functions
       env:
         FIREBASE_TOKEN: ${{ steps.auth.outputs.access_token }}

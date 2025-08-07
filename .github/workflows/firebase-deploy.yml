@@ -46,6 +46,6 @@ jobs:
       uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting,functions
-        project_id: active-tome-467816-s6
       env:
-        GCP_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }} # Use the output from the auth step
+        GCP_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
+        GCP_PROJECT: active-tome-467816-s6 # Use the output from the auth step

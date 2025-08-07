@@ -49,6 +49,8 @@ jobs:
         # Fetch BOTH secrets' values
         SECRET_SG=$(gcloud secrets versions access latest --secret=SENDGRID_API_KEY)
         SECRET_CE=$(gcloud secrets versions access latest --secret=CONTACT_EMAIL)
+        echo "SENDGRID_API_KEY=${SECRET_VALUE_SG}" > functions/.env.active-tome-467816-s6
+        echo "CONTACT_EMAIL=${SECRET_VALUE_CE}" >> functions/.env.active-tome-467816-s6
         
         # Create the .env file with BOTH secrets
         echo "SENDGRID_API_KEY=${SECRET_SG}" > functions/.env.active-tome-467816-s6

@@ -48,6 +48,10 @@ jobs:
       with:
         credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
+    # ADD THIS NEW STEP FOR DIAGNOSIS
+    - name: 'Debug: Try to access the secret directly'
+      run: gcloud secrets versions access latest --secret="SENDGRID_API_KEY"
+
     - name: Install Firebase Tools
       run: npm install -g firebase-tools
 

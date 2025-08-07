@@ -46,12 +46,14 @@ jobs:
 
     - name: Deploy to Firebase
       run: |
-        # Fetch the secret's value using the permissions we know are working.
-        SECRET_VALUE=$(gcloud secrets versions access latest --secret=SENDGRID_API_KEY)
+        # Fetch BOTH secrets' values
+        SECRET_SG=$(gcloud secrets versions access latest --secret=SENDGRID_API_KEY)
+        SECRET_CE=$(gcloud secrets versions access latest --secret=CONTACT_EMAIL)
         
-        # Dynamically create the .env file in the functions directory.
-        echo "SENDGRID_API_KEY=${SECRET_VALUE}" > functions/.env.active-tome-467816-s6
+        # Create the .env file with BOTH secrets
+        echo "SENDGRID_API_KEY=${SECRET_SG}" > functions/.env.active-tome-467816-s6
+        echo "CONTACT_EMAIL=${SECRET_CE}" >> functions/.env.active-tome-467816-s6
         
-        # Deploy. Firebase Tools will automatically find and use the new .env file.
+        # Deploy. Firebase Tools will automatically use the updated .env file.
         firebase deploy --only hosting,functions
       

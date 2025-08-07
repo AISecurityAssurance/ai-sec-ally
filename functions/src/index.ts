@@ -13,7 +13,7 @@ setGlobalOptions({maxInstances: 10});
 
 // Define secrets
 // const sendGridApiKey = defineSecret("SENDGRID_API_KEY"); # Not working
-const contactEmail = defineSecret("CONTACT_EMAIL");
+// const contactEmail = defineSecret("CONTACT_EMAIL"); # Not working
 
 
 // CORS helper function
@@ -44,6 +44,7 @@ export const contactForm = onRequest({
   timeoutSeconds: 60,
   memory: "256MiB",
   cors: true,
+  secrets: [],
   // secrets: [sendGridApiKey, contactEmail], // Not working with v2
   invoker: "public"
 }, async (req: Request, res: Response) => {

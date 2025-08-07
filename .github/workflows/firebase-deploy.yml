@@ -47,5 +47,4 @@ jobs:
 
     - name: Deploy to Firebase
       run: firebase deploy --only hosting,functions
-      env:
-        FIREBASE_TOKEN: ${{ steps.auth.outputs.access_token }}
+      

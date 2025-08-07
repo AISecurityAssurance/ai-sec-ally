@@ -47,7 +47,9 @@ jobs:
 
     - name: Deploy to Firebase
       run: |
-        export GOOGLE_APPLICATION_CREDENTIALS="${{ steps.auth.outputs.credentials_file_path }}"
+        CREDENTIALS_FILE="$(mktemp)"
+        echo "${{ steps.auth.outputs.credentials_file_path }}" > "$CREDENTIALS_FILE"
+        export GOOGLE_APPLICATION_CREDENTIALS="$CREDENTIALS_FILE"
         firebase deploy --only hosting,functions --project active-tome-467816-s6
       env:
         GCLOUD_PROJECT: active-tome-467816-s6 # Use the output from the auth step

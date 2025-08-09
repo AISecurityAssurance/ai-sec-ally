@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, Clock, ArrowRight } from "lucide-react";
+import { BookOpen, Clock, ArrowRight, Library } from "lucide-react";
 
 const Insights = () => {
   const articles = [
@@ -76,6 +76,28 @@ const Insights = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-12 p-8 bg-card/20 border-border backdrop-blur-sm rounded-lg max-w-4xl mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Library className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Research Library</h3>
+                  <p className="text-muted-foreground mt-1">
+                    Explore academic papers, standards, and technical resources
+                  </p>
+                </div>
+              </div>
+              <Link to="/insights/research">
+                <Button variant="hero">
+                  Browse Research
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="text-center mt-16">

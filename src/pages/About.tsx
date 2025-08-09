@@ -125,16 +125,20 @@ const About = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center leading-relaxed">
+                <p className="text-muted-foreground text-left leading-relaxed indent-8">
                   Lori is a machine learning engineer and researcher pioneering the automation of 
-                  security analysis through AI. She holds dual master's degrees in Computer 
-                  and Biomedical Forensic Science, with her thesis focusing on Systems 
-                  Theoretic Process Analysis for Security (STPA-Sec) and formal methods for 
-                  proving complete mediation properties. Her unique educational foundation also 
-                  includes a B.S. in Physics and Applied Computational Mathematics. Currently serving as a 
+                  security analysis through AI. She holds a master's degree in Biomedical Forensic Science 
+                  and another master's degree in Computer Science, with her thesis focusing on Systems 
+                  Theoretic Process Analysis for Security (STPA-Sec) and Certified Security by Design (CSBD, a formal methods framework for 
+                  proving properties of complete mediation). Her unique educational foundation also 
+                  includes a dual B.S. in Physics and Applied Computational Mathematics. Currently serving as a 
                   Machine Learning Engineer at a hardware cybersecurity and assurance company, 
                   she previously held positions at the Air Force Research Laboratory Information 
-                  Directorate and as a Research Assistant at Syracuse University. With deep 
+                  Directorate and as an Associate Computer Scientist, and at Syracuse University in the 
+                  College of Engineering and Computer Science as a Research Assistant.
+                  </p>
+                  <p className="text-muted-foreground text-left leading-relaxed indent-8 mt-4">
+                  With deep 
                   expertise in both AI/ML and systems security engineering, Lori is passionate about 
                   automating mission and systems assurance methodologies. As Co-founder and CEO, she 
                   leads the company's vision to transform how organizations approach security analysis 
@@ -161,13 +165,16 @@ const About = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center leading-relaxed">
+                <p className="text-muted-foreground text-left leading-relaxed indent-8">
                   Alvin is a security engineer and researcher passionate about advancing the 
                   intersection of AI and cybersecurity. He holds an M.S. in Computer Science, 
                   where his thesis focused on zero-knowledge proof systems, and a B.S. in 
                   Computer Science and Cybersecurity. Currently serving as an Associate Security 
                   Engineer at a Fortune 500 company, Alvin specializes in application security 
-                  and security architecture. His expertise in threat modeling and security 
+                  and security architecture.
+                </p>
+                <p className="text-muted-foreground text-left leading-relaxed indent-8 mt-4">
+                  His expertise in threat modeling and security 
                   frameworks drives our mission to revolutionize how organizations approach 
                   security analysis through AI automation. As Co-founder and CTO, Alvin leads 
                   the technical development of our security analysis platforms, bringing rigorous 

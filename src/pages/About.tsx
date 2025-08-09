@@ -118,7 +118,7 @@ const About = () => {
                   />
                 </div>
                 <CardTitle className="text-xl text-foreground">
-                  Co-Founder & CEO
+                  Co-Founder & Co-CEO
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Lori Pickering
@@ -158,7 +158,7 @@ const About = () => {
                   />
                 </div>
                 <CardTitle className="text-xl text-foreground">
-                  Co-Founder & CTO
+                  Co-Founder & Co-CEO
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Alvin Kuruvilla

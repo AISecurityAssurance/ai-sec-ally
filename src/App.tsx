@@ -8,6 +8,8 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
+import Insights from "./pages/Insights";
+import StpaSecStride from "./pages/StpaSecStride";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/stpa-sec-stride" element={<StpaSecStride />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

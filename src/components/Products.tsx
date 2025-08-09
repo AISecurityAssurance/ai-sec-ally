@@ -1,19 +1,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, ShieldCheck } from "lucide-react";
+import { Brain, ShieldCheck, ExternalLink } from "lucide-react";
 import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Products = () => {
   const products = [
     {
       icon: Brain,
       title: "Security Assurance Platform",
-      description: "AI-assisted security analysis using STPA-Sec, STRIDE, PASTA, and MAESTRO methodologies to identify and assess system vulnerabilities comprehensively."
+      description: "AI-assisted security analysis using STPA-Sec, STRIDE, PASTA, and MAESTRO methodologies to identify and assess system vulnerabilities comprehensively.",
+      learnMoreLink: "/insights/stpa-sec-stride"
     },
     {
       icon: ShieldCheck,
       title: "Cortex Arena",
-      description: "Advanced testing environment powered by AI-assisted DREAD, OCTAVE, and HAZOP, STRIDE, etc analysis tools for thorough security architecture validation and risk assessment."
+      description: "Advanced testing environment powered by AI-assisted DREAD, OCTAVE, and HAZOP, STRIDE, etc analysis tools for thorough security architecture validation and risk assessment.",
+      learnMoreLink: "/insights/stpa-sec-stride"
     }
   ];
 
@@ -43,9 +46,13 @@ const Products = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    <CardDescription className="text-muted-foreground leading-relaxed mb-4">
                       {product.description}
                     </CardDescription>
+                    <Link to={product.learnMoreLink} className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium">
+                      Learn about our methodology
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </Link>
                   </CardContent>
                 </Card>
               </AlertDialogTrigger>

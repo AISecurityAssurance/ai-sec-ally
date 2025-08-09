@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Clock, BookOpen } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, BookOpen, ExternalLink, FileText } from "lucide-react";
 
 const StpaSecStride = () => {
   return (
@@ -211,6 +212,107 @@ const StpaSecStride = () => {
               </div>
             </section>
           </div>
+
+          <section className="mt-16 mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">Related Research & Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <a href="https://mitpress.mit.edu/books/engineering-safer-world" target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <FileText className="h-5 w-5 text-primary mt-1" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <CardTitle className="text-lg text-foreground mt-2">
+                      Engineering a Safer World: Systems Thinking Applied to Safety
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground mt-1">Nancy G. Leveson, MIT Press (2011)</p>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-muted-foreground">
+                      The foundational text on STAMP/STPA methodology, introducing system-theoretic approaches to safety and security analysis. Essential reading for understanding the theoretical underpinnings of STPA-Sec.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </a>
+
+              <a href="http://psas.scripts.mit.edu/home/wp-content/uploads/2014/03/2014-STPA-Sec-Young-Leveson.pdf" target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <FileText className="h-5 w-5 text-primary mt-1" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <CardTitle className="text-lg text-foreground mt-2">
+                      STPA-Sec: A Systems-Theoretic Approach to Security Risk Analysis
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground mt-1">William Young & Nancy Leveson, MIT (2014)</p>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-muted-foreground">
+                      The seminal paper extending STPA to cybersecurity applications, demonstrating how system-theoretic concepts can identify security vulnerabilities that traditional methods miss.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </a>
+
+              <a href="https://learn.microsoft.com/en-us/training/modules/tm-stride-data-flow-diagram/" target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <FileText className="h-5 w-5 text-primary mt-1" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <CardTitle className="text-lg text-foreground mt-2">
+                      The STRIDE Threat Model
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground mt-1">Microsoft Security Development Lifecycle</p>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-muted-foreground">
+                      Microsoft's comprehensive documentation on STRIDE methodology, including practical applications, threat categorization guidelines, and integration with secure development practices.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </a>
+
+              <a href="https://www.sae.org/publications/technical-papers/content/2020-01-0145/" target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <FileText className="h-5 w-5 text-primary mt-1" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <CardTitle className="text-lg text-foreground mt-2">
+                      Integrating STPA into ISO 26262 for Automotive Cybersecurity
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground mt-1">SAE International Journal (2020)</p>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-muted-foreground">
+                      Real-world case study demonstrating the practical integration of STPA-Sec with industry standards, showing measurable improvements in threat identification and mitigation strategies.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </a>
+            </div>
+
+            <div className="mt-8 p-6 bg-muted/20 rounded-lg border border-border">
+              <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center">
+                <BookOpen className="h-5 w-5 mr-2 text-primary" />
+                Looking for More Research?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Explore our comprehensive research library for additional papers, case studies, and technical resources on STPA-Sec, STRIDE, and other advanced security methodologies.
+              </p>
+              <Link to="/insights/research">
+                <Button variant="outline">
+                  Visit Research Library
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </section>
 
           <div className="mt-16 p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg border border-primary/20">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Ready to Transform Your Security Analysis?</h3>

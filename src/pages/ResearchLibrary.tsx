@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, ExternalLink, BookOpen, Shield, Brain, Lock } from "lucide-react";
+import { ArrowLeft, FileText, ExternalLink, BookOpen, Shield, Brain, Lock, Lightbulb } from "lucide-react";
 
 const ResearchLibrary = () => {
   const researchCategories = {
@@ -210,6 +210,21 @@ const ResearchLibrary = () => {
           url: "https://www.nist.gov/itl/ai-risk-management-framework"
         },
       ]
+    },
+    systemsThinking: {
+      title: "Systems Thinking",
+      icon: Lightbulb,
+      papers: [
+        {
+          title: "Dilemmas in a General Theory of Planning",
+          authors: "Horst W. J. Rittel & Melvin M. Webber",
+          year: "1973",
+          source: "Policy Sciences",
+          description: "Foundational paper introducing the concept of 'wicked problems' - complex, ill-defined problems that resist traditional analytical approaches, directly influencing systems thinking methodologies.",
+          type: "Paper",
+          url: "https://www.andreasaltelli.eu/file/repository/Rittel_OCR.pdf"
+        }
+      ]
     }
   };
 
@@ -234,11 +249,12 @@ const ResearchLibrary = () => {
           </div>
 
           <Tabs defaultValue="stpaSec" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
               <TabsTrigger value="stpaSec">STPA-Sec</TabsTrigger>
               <TabsTrigger value="threatModeling">Threat Modeling</TabsTrigger>
               <TabsTrigger value="aiSecurity">AI for Security</TabsTrigger>
               <TabsTrigger value="standards">Standards</TabsTrigger>
+              <TabsTrigger value="systemsThinking">Systems Thinking</TabsTrigger>
             </TabsList>
 
             {Object.entries(researchCategories).map(([key, category]) => (

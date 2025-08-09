@@ -67,7 +67,7 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Ready to Secure Your Systems?
+            Ready to Build More Secure Systems?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Get in touch with our security experts to learn how AI Security Assurance can protect your organization.
@@ -167,13 +167,17 @@ const Contact = () => {
               </div>
               
               
-              <div className="flex items-center space-x-4">
+              <div className="flex items-start space-x-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Location</h4>
-                  <p className="text-muted-foreground">United States (Remote First)</p>
+                  <h4 className="font-semibold text-foreground">Address</h4>
+                  <p className="text-muted-foreground">
+                    AI Security Assurance, LLC<br />
+                    8401 MAYLAND DR #8133<br />
+                    RICHMOND, VA 23294
+                  </p>
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, Clock, ArrowRight, Library } from "lucide-react";
+import { BookOpen, Clock, ArrowRight, Library, Calendar } from "lucide-react";
 
 const Insights = () => {
   const articles = [
@@ -10,6 +10,7 @@ const Insights = () => {
       slug: "stpa-sec-stride",
       title: "Elevating Threat Modeling: The Power of STPA-Sec + STRIDE",
       description: "Learn how combining STPA-Sec with STRIDE creates a more effective and efficient approach to security analysis, moving beyond component-level threats to address emergent system vulnerabilities.",
+      date: "August 2, 2025",
       readTime: "8 min read",
       featured: true,
       tags: ["Threat Modeling", "STPA-Sec", "STRIDE", "Security Analysis"]
@@ -22,13 +23,36 @@ const Insights = () => {
       
       <section className="pt-32 pb-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              Security Insights
+              Storm Engineering
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore cutting-edge security methodologies, industry best practices, and innovative approaches to building resilient systems.
+              Security insights, engineering practices, tools, and everything we're building at AI Security Assurance.
             </p>
+          </div>
+
+          {/* Research Library Link */}
+          <div className="mb-16 p-6 bg-card/20 border-border backdrop-blur-sm rounded-lg max-w-4xl mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Library className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Research Library</h3>
+                  <p className="text-muted-foreground mt-1">
+                    Explore academic papers, standards, and technical resources
+                  </p>
+                </div>
+              </div>
+              <Link to="/insights/research">
+                <Button variant="hero">
+                  Browse Research
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -58,6 +82,10 @@ const Insights = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 text-muted-foreground">
                       <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span className="text-sm">{article.date}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4" />
                         <span className="text-sm">{article.readTime}</span>
                       </div>
@@ -76,28 +104,6 @@ const Insights = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          <div className="mt-12 p-8 bg-card/20 border-border backdrop-blur-sm rounded-lg max-w-4xl mx-auto">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Library className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">Research Library</h3>
-                  <p className="text-muted-foreground mt-1">
-                    Explore academic papers, standards, and technical resources
-                  </p>
-                </div>
-              </div>
-              <Link to="/insights/research">
-                <Button variant="hero">
-                  Browse Research
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
           </div>
 
           <div className="text-center mt-16">

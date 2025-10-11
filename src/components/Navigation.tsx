@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -6,8 +5,12 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary animate-pulse-glow" />
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src="/ai_storm_logo_transparent.png"
+              alt="AI-Storm Logo"
+              className="h-10 w-10"
+            />
             <span className="text-xl font-bold text-foreground">AI Security Assurance</span>
           </Link>
           
@@ -16,7 +19,10 @@ const Navigation = () => {
               Products
             </Link>
             <Link to="/insights" className="text-muted-foreground hover:text-primary transition-colors">
-              Insights
+              Storm Engineering
+            </Link>
+            <Link to="/journey" className="text-muted-foreground hover:text-primary transition-colors">
+              Our Journey
             </Link>
             <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
               About

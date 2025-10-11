@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, ExternalLink, BookOpen, Shield, Brain, Lock, Lightbulb } from "lucide-react";
+import { ArrowLeft, FileText, ExternalLink, BookOpen, Shield, Brain, Lock, Lightbulb, CheckCircle2 } from "lucide-react";
 
 const ResearchLibrary = () => {
   const researchCategories = {
@@ -225,6 +225,66 @@ const ResearchLibrary = () => {
           url: "https://www.andreasaltelli.eu/file/repository/Rittel_OCR.pdf"
         }
       ]
+    },
+    formalVerification: {
+      title: "Formal Verification",
+      icon: CheckCircle2,
+      papers: [
+        {
+          title: "From STPA to Model-Checking and Back: Automation Support for the STPA Process with TTool",
+          authors: "Ludovic Apvrille, Pierre de Saqui-Sannes",
+          year: "2020",
+          source: "IEEE SysCon 2020",
+          description: "Demonstrates integration between STPA and model-checking tools, showing how STPA artifacts can be transformed into formal models for automated verification using TTool.",
+          type: "Paper",
+          url: "https://perso.telecom-paristech.fr/apvrille/docs/SysCon2020_STPA_TTOOL.pdf"
+        },
+        {
+          title: "Combining STRIDE and STPA for Comprehensive Threat Analysis",
+          authors: "Various",
+          year: "2021",
+          source: "Safety Science",
+          description: "Explores the synergy between STPA-Sec's structured systems analysis and STRIDE's domain-specific language for more comprehensive cybersecurity threat analysis.",
+          type: "Paper",
+          url: "https://www.sciencedirect.com/science/article/pii/S1738573321006173"
+        },
+        {
+          title: "Automated Safety Analysis Using STPA and Model Checking",
+          authors: "Various",
+          year: "2024",
+          source: "arXiv",
+          description: "Presents approaches for automating STPA-based safety analysis through model checking techniques, demonstrating practical applications of formal methods to systems safety.",
+          type: "Paper",
+          url: "https://rtsys.informatik.uni-kiel.de/~biblio/downloads/papers/arxiv24b.pdf"
+        },
+        {
+          title: "Hierarchical STPA Integration with Event-B for Scalable Formal Verification",
+          authors: "Various",
+          year: "2024",
+          source: "Springer Innovations in Systems and Software Engineering",
+          description: "Advances in integrating hierarchical STPA with Event-B to manage complexity in formal verification, representing methodological maturation for scalable analysis.",
+          type: "Paper",
+          url: "https://link.springer.com/article/10.1007/s11334-024-00551-8"
+        },
+        {
+          title: "Linear Temporal Logic (LTL) for Model Checking",
+          authors: "Caltech",
+          year: "2019",
+          source: "Chalmers University",
+          description: "Foundational lecture slides on Linear Temporal Logic (LTL), the formal language used for specifying properties in model checking and formal verification of systems.",
+          type: "Lecture",
+          url: "https://www.cse.chalmers.se/edu/year/2019/course/TDA384_LP3/files/lectures/caltech-LTL-slides.pdf"
+        },
+        {
+          title: "Formal Methods for Safety-Critical Systems",
+          authors: "University of Stuttgart",
+          year: "2024",
+          source: "University of Stuttgart eLib",
+          description: "Comprehensive resource on applying formal methods to safety-critical systems, covering verification techniques and their practical applications.",
+          type: "Paper",
+          url: "https://elib.uni-stuttgart.de/server/api/core/bitstreams/01fc101c-5ae3-4c95-b5bd-c236dc407acd/content"
+        }
+      ]
     }
   };
 
@@ -249,12 +309,13 @@ const ResearchLibrary = () => {
           </div>
 
           <Tabs defaultValue="stpaSec" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 mb-8">
               <TabsTrigger value="stpaSec">STPA-Sec</TabsTrigger>
               <TabsTrigger value="threatModeling">Threat Modeling</TabsTrigger>
               <TabsTrigger value="aiSecurity">AI for Security</TabsTrigger>
               <TabsTrigger value="standards">Standards</TabsTrigger>
               <TabsTrigger value="systemsThinking">Systems Thinking</TabsTrigger>
+              <TabsTrigger value="formalVerification">Formal Verification</TabsTrigger>
             </TabsList>
 
             {Object.entries(researchCategories).map(([key, category]) => (

@@ -1,79 +1,372 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, ShieldCheck, ExternalLink } from "lucide-react";
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { Link } from "react-router-dom";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import {
+  Building2,
+  ShieldCheck,
+  Brain,
+  ArrowRight,
+  CheckCircle2,
+  Users,
+  Sparkles,
+} from "lucide-react";
 
-const Products = () => {
-  const products = [
-    {
-      icon: Brain,
-      title: "Security Assurance Platform",
-      description: "AI-assisted security analysis using STPA-Sec, STRIDE, PASTA, and MAESTRO methodologies to identify and assess system vulnerabilities comprehensively.",
-      learnMoreLink: "/insights/stpa-sec-stride"
-    },
-    {
-      icon: ShieldCheck,
-      title: "Cortex Arena",
-      description: "Advanced testing environment powered by AI-assisted DREAD, OCTAVE, and HAZOP, STRIDE, etc analysis tools for thorough security architecture validation and risk assessment.",
-      learnMoreLink: "/insights/stpa-sec-stride"
-    }
-  ];
+interface ProductsProps {
+  showContactButton?: boolean;
+}
 
+const Products = ({ showContactButton = true }: ProductsProps) => {
   return (
-    <section className="py-24 bg-muted/20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            AI Security Products in Development
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We're building the next generation of AI-powered security solutions to revolutionize how teams protect their systems.
-          </p>
+    <div className="min-h-screen bg-background">
+      {/* The Vision: Provable Security by Design */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                The Vision: Provable Security by Design
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Mathematical proof that your system is secure
+              </p>
+            </div>
+
+            <div className="space-y-6 text-muted-foreground">
+              <p className="text-lg leading-relaxed">
+                Our ultimate vision is <strong className="text-foreground">provable security through
+                formal verification</strong>—not just identifying vulnerabilities, but providing
+                mathematical proof that security properties hold in your system. This is the highest
+                level of assurance, essential for safety and security-critical applications, yet historically
+                inaccessible due to complexity and expertise requirements.
+              </p>
+
+              <Card className="bg-card/50 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-foreground">
+                    Beyond Traditional Security Analysis
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    Traditional security analysis—even systematic approaches like STPA-Sec—identifies
+                    potential vulnerabilities and recommends mitigations. Formal verification provides
+                    <strong className="text-foreground"> mathematical proof</strong> that security
+                    properties actually hold. For medical devices, aerospace systems, autonomous
+                    vehicles, and critical infrastructure, this level of assurance isn't optional—it's
+                    essential.
+                  </p>
+                  <p>
+                    We're actively researching multiple approaches to make formal verification accessible:
+                  </p>
+                  <ul className="space-y-2 ml-6">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Temporal logic verification of control actions and security constraints</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Attack tree formal analysis</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>Complete mediation proofs</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>LLM-guided proof generation and validation</span>
+                    </li>
+                  </ul>
+                  <p className="font-semibold text-foreground">
+                    Our goal: democratize provable security, making formal verification practical for
+                    any development team—not just academic researchers.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                <p className="text-base leading-relaxed">
+                  <strong className="text-foreground">Our Approach:</strong> We're building AI-Storm
+                  in phases. Phase 1 delivers immediate value through automated security analysis you
+                  can use today, while establishing the foundation for Phase 2 formal verification
+                  capabilities. This research-intensive work requires continued R&D investment through
+                  grants, contracts, and partnerships.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {products.map((product, index) => (
-            <AlertDialog key={index}>
-              <AlertDialogTrigger asChild>
-                <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 group hover:shadow-elegant cursor-pointer">
-                  <CardHeader>
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <product.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <CardTitle className="text-xl text-foreground">{product.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-muted-foreground leading-relaxed mb-4">
-                      {product.description}
-                    </CardDescription>
-                    <Link to={product.learnMoreLink} className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium">
-                      Learn about our methodology
-                      <ExternalLink className="ml-1 h-3 w-3" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Product In Development</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    The {product.title} is currently under active development. We are working hard to bring you the best security assurance tools. For more information or to inquire about early access, please get in touch with us.
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogAction asChild>
-                    <Link to="/contact">Contact Us</Link>
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          ))}
+      </section>
+
+      {/* Core Capabilities - Phase 1 */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Phase 1: Systematic Security Analysis, Automated
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get value today while we build toward formal verification
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Card 1: STPA-Sec Foundation */}
+            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Building2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl text-foreground">
+                    STPA-Sec: The Backbone
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
+                  AI-Storm is built on Systems-Theoretic Process Analysis for
+                  Security (STPA-Sec), a systematic methodology that identifies
+                  security vulnerabilities at the system level—not just
+                  component-level threats. STPA-Sec ensures comprehensive coverage
+                  of emergent security properties that traditional methods miss.
+                </CardDescription>
+                <div className="flex items-start space-x-2 text-sm text-primary">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Identify system-level security issues before they become incidents
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card 2: Integrated Threat Modeling */}
+            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <ShieldCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl text-foreground">
+                    Multi-Framework Analysis
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
+                  AI-Storm integrates STRIDE threat modeling alongside STPA-Sec,
+                  providing both system-level and component-level security analysis.
+                  With support for additional frameworks, AI-Storm adapts to your
+                  security needs—including emerging areas like AI-based systems.
+                </CardDescription>
+                <div className="flex items-start space-x-2 text-sm text-primary">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>Comprehensive coverage across methodologies</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card 3: AI-Augmented Workflow */}
+            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Brain className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl text-foreground">
+                    Human-in-the-Loop Intelligence
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
+                  AI-Storm's AI engine performs framework analysis—identifying
+                  threats, generating documentation, creating structured
+                  artifacts—while security analysts supervise through our
+                  interactive interface. Edit, add, or remove findings as needed.
+                  For safety and security-critical systems, expert oversight ensures quality;
+                  for routine applications, automation speeds delivery.
+                </CardDescription>
+                <div className="flex items-start space-x-2 text-sm text-primary">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>Scale expertise without sacrificing quality</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-primary/5 p-8 rounded-lg border border-primary/20">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Continuously Evolving Platform
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                AI-Storm is being developed in rapid, iterative cycles to keep pace with the AI industry.
+                We're currently prototyping Phase 1 capabilities with an interactive web UI (launching by year-end)
+                and actively planning Phase 2 formal verification roadmap (completing this month).
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">On the horizon:</strong> Enhanced system ingestion
+                (full GitHub repository analysis), AI-specific security frameworks (MAESTRO integration),
+                and domain-specific adaptations for safety and security-critical industries. As the AI landscape
+                evolves, so does AI-Storm—we adapt our priorities based on emerging threats, research breakthroughs,
+                and partner feedback.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Who Is AI-Storm For */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Security Analysis for Every System
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              We believe all systems deserve security-by-design. AI-Storm serves
+              teams across the spectrum—from rapid development teams to
+              high-assurance engineering groups.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Left Column: Enterprise & Routine Systems */}
+            <Card className="bg-card/50 border-border">
+              <CardHeader>
+                <CardTitle className="text-2xl text-foreground mb-2">
+                  Enterprise & Routine Systems
+                </CardTitle>
+                <CardDescription className="text-base">
+                  Web applications, mobile apps, SaaS platforms, internal tools
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Mode:</p>
+                  <p className="text-muted-foreground">
+                    AI-driven automation with optional expert review
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Benefit:</p>
+                  <p className="text-muted-foreground">
+                    Fast, comprehensive analysis without dedicated security teams
+                  </p>
+                </div>
+                <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
+                  <p className="text-sm text-muted-foreground italic">
+                    <strong className="text-foreground">Example:</strong> Identify
+                    authentication vulnerabilities in a microservices architecture
+                    in hours, not weeks
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Right Column: Safety & Security-Critical Systems */}
+            <Card className="bg-card/50 border-border">
+              <CardHeader>
+                <CardTitle className="text-2xl text-foreground mb-2">
+                  Safety & Security-Critical Systems
+                </CardTitle>
+                <CardDescription className="text-base">
+                  Aerospace, defense, medical devices, critical infrastructure, automotive
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Mode:</p>
+                  <p className="text-muted-foreground">
+                    AI augmentation + mandatory Human-in-the-Loop
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Benefit:</p>
+                  <p className="text-muted-foreground">
+                    Expert-level analysis with AI efficiency
+                  </p>
+                </div>
+                <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
+                  <p className="text-sm text-muted-foreground italic">
+                    <strong className="text-foreground">Example:</strong> Systematic
+                    security analysis for autonomous vehicle control systems with
+                    expert oversight
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner With Us */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <Users className="h-16 w-16 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Shape the Future of Security Analysis
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              We're building AI-Storm in phases—delivering immediate value through automated STPA-Sec
+              analysis while advancing toward formal verification capabilities. We're looking for
+              forward-thinking organizations to partner with us—whether as early adopters, beta testers,
+              research collaborators, or investors in our vision of provable security.
+            </p>
+            <div className="bg-card/50 border border-border rounded-lg p-8 mb-8">
+              <p className="text-lg font-semibold text-foreground mb-4">
+                Interested in:
+              </p>
+              <ul className="text-left text-muted-foreground space-y-3 max-w-2xl mx-auto">
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Getting early access to Phase 1 tools and providing feedback?</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Exploring how AI-Storm fits your security workflow?
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Collaborating on formal verification research?
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Supporting our mission as an investor or strategic partner?
+                  </span>
+                </li>
+              </ul>
+            </div>
+            {showContactButton && (
+              <>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Let's talk about how we can work together.
+                </p>
+                <Link to="/contact">
+                  <Button variant="hero" size="lg">
+                    Contact Us to Learn More
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

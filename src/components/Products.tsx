@@ -93,9 +93,10 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
                 <p className="text-base leading-relaxed">
                   <strong className="text-foreground">Our Approach:</strong> We're building AI-Storm
-                  in phases. Phase 1 delivers immediate value through automated security analysis you
-                  can use today, while establishing the foundation for Phase 2 formal verification
-                  capabilities. This research-intensive work requires continued R&D investment through
+                  in three phases. Phase 1 delivers the MVP with core STPA-Sec, STRIDE, and foundational
+                  formal verification. Phase 2 expands formal verification capabilities with advanced
+                  methods. Phase 3 scales to diverse industries with additional frameworks and enterprise
+                  features. This research-intensive work requires continued R&D investment through
                   grants, contracts, and partnerships.
                 </p>
               </div>
@@ -109,10 +110,10 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Phase 1: Systematic Security Analysis, Automated
+              AI-Storm Core Capabilities
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get value today while we build toward formal verification
+              Systematic security analysis with foundational formal verification
             </p>
           </div>
 
@@ -208,15 +209,15 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 AI-Storm is being developed in rapid, iterative cycles to keep pace with the AI industry.
-                We're currently prototyping Phase 1 capabilities with an interactive web UI (launching by year-end)
-                and actively planning Phase 2 formal verification roadmap (completing this month).
+                We're currently building our MVP with an interactive web UI (launching by year-end),
+                integrating core STPA-Sec, STRIDE, and foundational formal verification capabilities.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">On the horizon:</strong> Enhanced system ingestion
-                (full GitHub repository analysis), AI-specific security frameworks (MAESTRO integration),
-                and domain-specific adaptations for safety and security-critical industries. As the AI landscape
-                evolves, so does AI-Storm—we adapt our priorities based on emerging threats, research breakthroughs,
-                and partner feedback.
+                <strong className="text-foreground">On the horizon:</strong> Expanded formal verification
+                methods (Phase 2), enhanced system ingestion (full GitHub repository analysis), AI-specific
+                security frameworks (MAESTRO integration), and domain-specific adaptations for safety and
+                security-critical industries (Phase 3). As the AI landscape evolves, so does AI-Storm—we
+                adapt our priorities based on emerging threats, research breakthroughs, and partner feedback.
               </p>
             </div>
           </div>
@@ -316,10 +317,10 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               Shape the Future of Security Analysis
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're building AI-Storm in phases—delivering immediate value through automated STPA-Sec
-              analysis while advancing toward formal verification capabilities. We're looking for
-              forward-thinking organizations to partner with us—whether as early adopters, beta testers,
-              research collaborators, or investors in our vision of provable security.
+              We're building AI-Storm through three phases—MVP with core capabilities, expanded formal
+              verification, and scaled ecosystem growth. We're looking for forward-thinking organizations
+              to partner with us—whether as early adopters, beta testers, research collaborators, or
+              investors in our vision of provable security.
             </p>
             <div className="bg-card/50 border border-border rounded-lg p-8 mb-8">
               <p className="text-lg font-semibold text-foreground mb-4">
@@ -328,7 +329,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               <ul className="text-left text-muted-foreground space-y-3 max-w-2xl mx-auto">
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Getting early access to Phase 1 tools and providing feedback?</span>
+                  <span>Getting early access to our MVP and providing feedback?</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />

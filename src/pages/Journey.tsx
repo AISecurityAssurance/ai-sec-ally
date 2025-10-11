@@ -1,7 +1,74 @@
 import Navigation from "@/components/Navigation";
-import { Lightbulb, Target, Users, Sparkles } from "lucide-react";
+import { Lightbulb, Target, Users, Sparkles, BookOpen, Zap, Network, Rocket } from "lucide-react";
 
 const Journey = () => {
+  const timelineItems = [
+    {
+      icon: Lightbulb,
+      decorativeIcon: BookOpen,
+      title: "The Academic Foundation",
+      content: "AI-Storm's foundation traces back to groundbreaking academic work integrating systematic security analysis with formal verification. Building on MIT Professor Nancy Leveson's STPA (System-Theoretic Process Analysis) methodology, Dr. William Young developed STPA-Sec—extending STPA from safety into security. Professor Shiu-kai Chin and Professor Susan Older of Syracuse University developed CSBD (Certified Security by Design), which formally verifies security properties. Their collaboration created STORM—a holistic systems security engineering framework.",
+      side: "left"
+    },
+    {
+      icon: Target,
+      decorativeIcon: Zap,
+      title: "Recognizing the Automation Gap",
+      content: "Our co-founder Lori Pickering's master's research applied STORM to different system types, revealing fundamental challenges: these methods were time-consuming, required deep expertise, and involved tedious manual processes. She recognized that the systematic nature of these methodologies made them ideal candidates for automation. Working with a team at AIS (Rome, NY), she built an early prototype automating portions of CSBD. However, the technology wasn't ready—until now. Recent advances in LLMs have finally made comprehensive automation practical.",
+      side: "right"
+    },
+    {
+      icon: Sparkles,
+      decorativeIcon: Lightbulb,
+      title: "The Visionary Groundwork",
+      content: "Dr. John P. Thomas of MIT's Engineering Systems Laboratory stands as an early visionary of STPA automation. His work transformed STPA from a heuristic methodology into a comprehensive, systematic approach through two key innovations: developing a method to exhaustively extract unsafe control action scenarios, and systematizing the nomenclature for scenario specification, making STPA artifacts machine-readable. However, two critical gaps remained: the manual analysis work and inaccessible formal verification.",
+      side: "left"
+    },
+    {
+      icon: Lightbulb,
+      decorativeIcon: Sparkles,
+      title: "The AI Opportunity",
+      content: "This represented both a challenge and an opportunity: What if AI could handle both the cognitive-intensive analysis tasks and enable formal verification through an LLM-in-the-loop approach? This would bring these powerful, proven methodologies to a broader audience, enabling wider adoption and transforming provable security from an academic capability into a practical tool for any development team.",
+      side: "right"
+    },
+    {
+      icon: Users,
+      decorativeIcon: Users,
+      title: "Meeting of Minds",
+      content: "The vision for AI-Storm crystallized when Lori connected with Alvin, a cybersecurity professional with extensive experience in enterprise systems and practical threat modeling. Alvin actively uses frameworks like STRIDE alongside AI-powered tools to enhance his security analysis work. He brought crucial insights from the cybersecurity practitioner's world—the time pressure, the expertise scarcity, the tension between security thoroughness and release velocity.",
+      side: "left"
+    },
+    {
+      icon: Target,
+      decorativeIcon: Network,
+      title: "Bridging Worlds",
+      content: "Recent research demonstrates that combining STPA-Sec's structured systems analysis with STRIDE's domain-specific language enables cybersecurity professionals to perform more comprehensive threat analysis. This synergy was exactly what AI-Storm needed: a way to bridge systems security engineering with traditional cybersecurity practice. Together, Lori and Alvin saw the potential to make comprehensive security analysis accessible to every team.",
+      side: "right"
+    },
+    {
+      icon: Sparkles,
+      decorativeIcon: Rocket,
+      title: "The Complete Vision: AI-Storm",
+      content: "As they explored the landscape, another opportunity emerged. While STPA-Sec combined with STRIDE provides powerful analysis, emerging threat domains demand additional frameworks. Their expanded vision: build STPA-Sec+—a comprehensive analysis platform with STPA-Sec as the backbone, incorporating proven frameworks for emerging domains. AI-Storm represents this complete vision: AI-automated STPA-Sec+ combined with AI-driven formal verification, transforming provable security from a manual, expert-only capability into an accessible, automated reality.",
+      side: "left",
+      highlight: true
+    },
+    {
+      icon: Target,
+      decorativeIcon: Target,
+      title: "Our Mission",
+      content: "Make security-by-design the default, not the exception. For too long, comprehensive security analysis has been too slow, too manual, and too scarce. AI-Storm changes this equation. By automating the labor-intensive parts of STPA-Sec and integrating proven frameworks like STRIDE, we're making it possible for any team to perform systematic security analysis—whether they're building a mobile app or a medical device.",
+      side: "right"
+    },
+    {
+      icon: Sparkles,
+      decorativeIcon: Sparkles,
+      title: "The Path to Provable Security",
+      content: "Our ultimate vision: make provable security accessible to every development team. While AI-Storm's initial prototype focuses on automating STPA-Sec and STRIDE analysis, this is just the first step. We're exploring multiple approaches to make formal verification accessible through AI—from temporal logic verification to attack tree formal analysis to LLM-guided proof generation. The goal: automate tedious processes while enabling experts to scale their knowledge and allowing teams without specialized expertise to benefit from these powerful techniques.",
+      side: "left"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -20,270 +87,139 @@ const Journey = () => {
         </div>
       </section>
 
-      {/* The Origin */}
+      {/* Timeline Section */}
       <section className="py-12">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Lightbulb className="h-8 w-8 text-primary" />
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Timeline bar - hidden on mobile */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary/30 via-primary/50 to-primary/30"></div>
+
+              {/* Timeline items */}
+              <div className="space-y-12">
+                {timelineItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className={`relative flex items-center ${item.side === 'left' ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col`}>
+                      {/* Content */}
+                      <div className={`w-full md:w-5/12 ${item.side === 'left' ? 'md:text-right md:pr-12' : 'md:pl-12'}`}>
+                        <div className={`bg-card/50 border border-border rounded-lg p-6 hover:bg-card/70 transition-all duration-300 hover:shadow-lg ${item.highlight ? 'ring-2 ring-primary/50' : ''}`}>
+                          <div className={`flex items-center gap-3 mb-3 ${item.side === 'left' ? 'md:justify-end' : 'md:justify-start'} justify-start`}>
+                            <div className="p-2 bg-primary/10 rounded-lg">
+                              <Icon className="h-5 w-5 text-primary" />
+                            </div>
+                            <h3 className="text-xl font-bold text-foreground">
+                              {item.title}
+                            </h3>
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {item.content}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Center dot - hidden on mobile */}
+                      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
+
+                      {/* Decorative elements on empty side */}
+                      <div className="hidden md:block w-5/12 relative">
+                        <div className={`flex ${item.side === 'left' ? 'justify-start pl-12' : 'justify-end pr-12'} items-center h-full`}>
+                          {/* Gradient orb with icon */}
+                          <div className="relative">
+                            {/* Background gradient orb */}
+                            <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${
+                              index % 3 === 0 ? 'from-primary/20 to-primary/5' :
+                              index % 3 === 1 ? 'from-purple-500/20 to-purple-500/5' :
+                              'from-blue-500/20 to-blue-500/5'
+                            } blur-2xl absolute inset-0`}></div>
+
+                            {/* Icon container */}
+                            <div className="relative w-20 h-20 flex items-center justify-center">
+                              <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${
+                                index % 3 === 0 ? 'from-primary/30 to-primary/10' :
+                                index % 3 === 1 ? 'from-purple-500/30 to-purple-500/10' :
+                                'from-blue-500/30 to-blue-500/10'
+                              } border border-primary/20`}></div>
+                              {(() => {
+                                const DecorativeIcon = item.decorativeIcon;
+                                return <DecorativeIcon className={`h-10 w-10 relative z-10 ${
+                                  index % 3 === 0 ? 'text-primary' :
+                                  index % 3 === 1 ? 'text-purple-500' :
+                                  'text-blue-500'
+                                }`} />;
+                              })()}
+                            </div>
+
+                            {/* Geometric accent lines */}
+                            <div className={`absolute top-1/2 ${item.side === 'left' ? 'left-full ml-6' : 'right-full mr-6'} transform -translate-y-1/2`}>
+                              <div className={`flex ${item.side === 'left' ? 'flex-row' : 'flex-row-reverse'} items-center gap-2`}>
+                                <div className={`w-12 h-px bg-gradient-to-r ${
+                                  item.side === 'left' ? 'from-primary/40 to-transparent' : 'from-transparent to-primary/40'
+                                }`}></div>
+                                <div className="w-2 h-2 rounded-full bg-primary/40"></div>
+                                <div className={`w-6 h-px bg-gradient-to-r ${
+                                  item.side === 'left' ? 'from-primary/30 to-transparent' : 'from-transparent to-primary/30'
+                                }`}></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Where It Started: Recognizing the Automation Gap
-              </h2>
-            </div>
-
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p className="leading-relaxed">
-                AI-Storm's foundation traces back to groundbreaking academic work integrating
-                systematic security analysis with formal verification. Building on MIT Professor Nancy Leveson's
-                STPA (System-Theoretic Process Analysis) methodology, Dr. William Young of MIT and the U.S. Air
-                Force developed STPA-Sec—extending STPA from safety analysis into the realm of security to create
-                a unified safety and security analysis methodology. Professor Shiu-kai Chin and Professor Susan
-                Older of Syracuse University developed CSBD (Certified Security by Design), which formally verifies
-                security properties with respect to authentication and authorization. Their collaboration created
-                STORM (System-Theoretic Operational Risk Management)—a holistic systems security engineering
-                framework for analyzing systems with a focus on secure-by-design principles.
-              </p>
-
-              <p className="leading-relaxed">
-                Our co-founder Lori Pickering's master's research applied STORM to different system types,
-                demonstrating the framework's broad applicability. The experience revealed fundamental
-                challenges: these methods were time-consuming, required deep expertise, and involved
-                tedious manual processes. Like many engineers, she recognized that the systematic nature
-                of these methodologies made them ideal candidates for automation—a goal shared by others
-                in the field. Working with a team at AIS (Rome, NY), she built an early prototype
-                automating portions of CSBD. However, the technology wasn't ready for full automation—until
-                now. Recent advances in LLMs have finally made comprehensive automation practical.
-              </p>
-
-              <p className="leading-relaxed">
-                Dr. John P. Thomas of MIT's Engineering Systems Laboratory stands as an early visionary of
-                STPA automation. His work transformed STPA from a heuristic methodology into a comprehensive,
-                systematic approach through two key innovations: First, he developed a method to exhaustively
-                extract unsafe control action scenarios from process control diagrams—these scenarios are what
-                enable current LTL-based formal verification. Second, he systematized the nomenclature for
-                scenario specification, making STPA artifacts machine-readable. This groundwork set the stage
-                for both automation and formal verification. However, two critical gaps remained. First, the
-                natural language analysis, diagram interpretation, and threat reasoning were still tedious,
-                time-consuming, primarily manual processes requiring deep expertise. Second, while formal
-                verification has been demonstrated in research projects and specialized engineering applications,
-                it remains primarily a manual task requiring PhD-level expertise and custom toolchain
-                integration—leaving formal verification inaccessible as a practical capability for most
-                development teams.
-              </p>
-
-              <p className="leading-relaxed">
-                This represented both a challenge and an opportunity: What if AI could handle both the
-                cognitive-intensive analysis tasks and enable formal verification through an LLM-in-the-loop
-                approach? This would bring these powerful, proven methodologies to a broader audience,
-                enabling wider adoption and transforming <strong className="text-foreground">provable
-                security</strong> from an academic capability into a practical tool for any development team.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Partnership */}
+      {/* Three-Phase Roadmap */}
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Meeting of Minds: Research Meets Practice
-              </h2>
-            </div>
-
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p className="leading-relaxed">
-                The vision for AI-Storm crystallized when Lori connected with Alvin, a cybersecurity
-                professional with extensive experience in enterprise systems and practical threat modeling.
-                Alvin actively uses frameworks like STRIDE alongside AI-powered tools such as STRIDE GPT
-                to enhance his security analysis work.
-              </p>
-
-              <p className="leading-relaxed">
-                Alvin brought crucial insights from the cybersecurity practitioner's world. He understood
-                the real-world constraints—the time pressure, the expertise scarcity, the tension between
-                security thoroughness and release velocity. Recent research demonstrates that combining
-                STPA-Sec's structured systems analysis with STRIDE's domain-specific language enables
-                cybersecurity professionals to perform more comprehensive threat analysis. This synergy
-                was exactly what AI-Storm needed: a way to bridge systems security engineering with
-                traditional cybersecurity practice.
-              </p>
-
-              <p className="leading-relaxed">
-                Beyond his practical expertise, Alvin's proactive approach to learning and hunger for
-                research engagement helped crystallize the product vision. Together, Lori and Alvin saw
-                the potential: combine systematic methodologies like STPA-Sec with established frameworks
-                like STRIDE, automate the tedious manual work with AI, and make comprehensive security
-                analysis accessible to every team—regardless of their security expertise or system criticality.
-              </p>
-
-              <p className="leading-relaxed">
-                As they explored the landscape, another opportunity emerged. While STPA-Sec combined with
-                STRIDE provides powerful analysis, emerging threat domains demand additional frameworks.
-                AI systems require specialized analysis techniques like MAESTRO, and privacy can no longer
-                be an afterthought. Their expanded vision: build <strong className="text-foreground">STPA-Sec+</strong>—a
-                comprehensive analysis platform with STPA-Sec as the backbone, incorporating proven frameworks
-                for emerging domains. Combined with formal verification capabilities, STPA-Sec+ represents the
-                complete vision for AI-Storm.
-              </p>
-
-              <p className="leading-relaxed font-semibold text-foreground">
-                AI-Storm was born from this partnership—bridging academic rigor with practical necessity,
-                systems security engineering with cybersecurity practice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Mission */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Target className="h-8 w-8 text-primary" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Democratizing Security Analysis
-              </h2>
-            </div>
-
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p className="leading-relaxed font-semibold text-foreground text-xl">
-                Our mission is clear: make security-by-design the default, not
-                the exception.
-              </p>
-
-              <p className="leading-relaxed">
-                For too long, comprehensive security analysis has been:
-              </p>
-
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start">
-                  <span className="text-primary font-bold mr-3">•</span>
-                  <span>
-                    <strong className="text-foreground">Too slow:</strong> Taking
-                    far too long relative to modern development cycles
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary font-bold mr-3">•</span>
-                  <span>
-                    <strong className="text-foreground">Too manual:</strong>{" "}
-                    Expert-level analysis trapped in tedious, error-prone manual processes
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary font-bold mr-3">•</span>
-                  <span>
-                    <strong className="text-foreground">Too scarce:</strong>{" "}
-                    Limited access to security experts creates bottlenecks for teams who need analysis
-                  </span>
-                </li>
-              </ul>
-
-              <p className="leading-relaxed">
-                AI-Storm changes this equation. By automating the labor-intensive
-                parts of STPA-Sec and integrating proven frameworks like STRIDE,
-                we're making it possible for any team to perform systematic security
-                analysis—whether they're building a mobile app or a medical device.
-              </p>
-
-              <p className="leading-relaxed">
-                We remain committed to research and publication, continuously
-                improving how AI can augment human expertise in security analysis
-                while maintaining the quality and rigor that safety and security-critical systems
-                demand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Path to Provable Security */}
-      <section className="py-12 bg-muted/20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Sparkles className="h-8 w-8 text-primary" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                The Path to Provable Security
-              </h2>
-            </div>
-
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p className="leading-relaxed font-semibold text-foreground text-xl">
-                Our ultimate vision: make provable security accessible to every development team.
-              </p>
-
-              <p className="leading-relaxed">
-                While AI-Storm's initial prototype focuses on automating STPA-Sec and STRIDE analysis—demonstrating
-                the power of AI-driven security frameworks—this is just the first step toward our larger goal.
-              </p>
-
-              <div className="bg-card/50 border border-border rounded-lg p-6 my-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  Two-Phase Roadmap
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">
-                      Phase 1: Automated Security Analysis (Current)
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      AI-driven STPA-Sec, STRIDE, and multi-framework analysis with human-in-the-loop
-                      oversight. Early prototype in active development.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">
-                      Phase 2: Formal Verification with LLM-in-the-Loop
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Extending AI-Storm to formally verify security properties using advanced
-                      formal methods and LLM-guided proof generation. This transforms security
-                      analysis from "comprehensive" to "provable."
-                    </p>
-                  </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-card/50 border border-border rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                Three-Phase Roadmap
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
+                  <p className="font-semibold text-foreground mb-2 text-lg">
+                    Phase 1: AI-Storm MVP
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-3 font-medium text-primary">
+                    Current
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Core STPA-Sec and STRIDE automation with foundational formal verification capabilities.
+                    Proving the integrated AI-driven approach works. Early prototype in active development.
+                  </p>
+                </div>
+                <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
+                  <p className="font-semibold text-foreground mb-2 text-lg">
+                    Phase 2: Formal Verification
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-3 font-medium text-purple-500">
+                    Near-Term
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Expanding formal methods with temporal logic verification, attack tree analysis, and LLM-guided proof generation.
+                    Transforming security analysis from "comprehensive" to "provable."
+                  </p>
+                </div>
+                <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
+                  <p className="font-semibold text-foreground mb-2 text-lg">
+                    Phase 3: Scale & Ecosystem
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-3 font-medium text-blue-500">
+                    Future Vision
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    STPA-Sec+ with additional frameworks, industry-specific templates, enterprise integrations, and ecosystem growth.
+                    Making advanced security analysis accessible to every team and industry.
+                  </p>
                 </div>
               </div>
-
-              <p className="leading-relaxed">
-                <strong className="text-foreground">Why formal verification matters:</strong> Traditional
-                security analysis identifies potential vulnerabilities, but formal verification provides
-                mathematical proof that security properties hold. For safety and security-critical systems—medical devices,
-                aerospace, autonomous vehicles, critical infrastructure—this level of assurance is essential.
-                Yet formal verification has remained inaccessible due to its complexity and the specialized
-                expertise required.
-              </p>
-
-              <p className="leading-relaxed">
-                <strong className="text-foreground">Our research direction:</strong> We're exploring multiple
-                approaches to make formal verification accessible through AI and LLMs—from temporal logic
-                verification of control actions and security constraints, to attack tree formal analysis,
-                to complete mediation proofs, to LLM-guided proof generation. The goal is to automate the
-                tedious, time-consuming manual processes while enabling experts to scale their knowledge
-                and allowing teams without specialized formal methods expertise to benefit from these
-                powerful techniques.
-              </p>
-
-              <p className="leading-relaxed">
-                This research-intensive work requires continued R&D investment through grants, contracts,
-                and partnerships. We're actively seeking collaborators and funding to advance this vision.
-                The STPA-Sec prototype demonstrates our capability to automate complex security frameworks
-                with AI—formal verification is the natural next step, and it's where AI-Storm will truly
-                differentiate itself in the market.
-              </p>
             </div>
           </div>
         </div>

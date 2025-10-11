@@ -7,12 +7,21 @@ import { BookOpen, Clock, ArrowRight, Library, Calendar } from "lucide-react";
 const Insights = () => {
   const articles = [
     {
+      slug: "ai-driven-stpa-sec-incident-response",
+      title: "AI-Driven STPA-Sec Analysis: Securing Incident Response Systems",
+      description: "Discover how AI can reason about complex security properties using advanced frameworks like STPA-Sec. This comprehensive analysis demonstrates applying system-theoretic security analysis to the Incident Command System, revealing vulnerabilities that traditional methods miss.",
+      date: "September 6, 2025",
+      readTime: "15 min read",
+      featured: true,
+      tags: ["STPA-Sec", "AI Security", "Incident Response", "Systems Analysis"]
+    },
+    {
       slug: "stpa-sec-stride",
       title: "Elevating Threat Modeling: The Power of STPA-Sec + STRIDE",
       description: "Learn how combining STPA-Sec with STRIDE creates a more effective and efficient approach to security analysis, moving beyond component-level threats to address emergent system vulnerabilities.",
       date: "August 2, 2025",
       readTime: "8 min read",
-      featured: true,
+      featured: false,
       tags: ["Threat Modeling", "STPA-Sec", "STRIDE", "Security Analysis"]
     }
   ];
@@ -55,7 +64,7 @@ const Insights = () => {
             </div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-8">
             {articles.map((article) => (
               <Card key={article.slug} className={`bg-card/20 border-border backdrop-blur-sm hover:bg-card/30 transition-all duration-300 ${article.featured ? 'ring-2 ring-primary/50' : ''}`}>
                 <CardHeader>

@@ -6,7 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Loader2 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
-const Contact = () => {
+interface ContactProps {
+  showTitle?: boolean;
+}
+
+const Contact = ({ showTitle = true }: ContactProps) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -65,14 +69,16 @@ const Contact = () => {
   return (
     <section className="py-24 bg-gradient-primary">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Ready to Build More Secure Systems?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get in touch with our security experts to learn how AI Security Assurance can protect your organization.
-          </p>
-        </div>
+        {showTitle && (
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Ready to Build More Secure Systems?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Get in touch with our security experts to learn how AI-Storm can bring provable security to your organization.
+            </p>
+          </div>
+        )}
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <Card className="bg-card/20 border-border backdrop-blur-sm">
@@ -151,7 +157,7 @@ const Contact = () => {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold mb-4 text-foreground">Get in touch</h3>
               <p className="text-muted-foreground mb-8">
-                Ready to transform your cybersecurity approach? Our team of experts is here to help you implement AI-powered security solutions.
+                Ready to transform your security analysis approach? Whether you're interested in AI-Storm's automated STPA-Sec and STRIDE analysis or our vision for formal verification, our team is here to help.
               </p>
             </div>
             

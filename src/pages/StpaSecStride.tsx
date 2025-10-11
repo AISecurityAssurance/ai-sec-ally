@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Clock, BookOpen, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, BookOpen, ExternalLink, FileText, Calendar } from "lucide-react";
 
 const StpaSecStride = () => {
   return (
@@ -13,7 +13,7 @@ const StpaSecStride = () => {
         <div className="container mx-auto px-6 max-w-4xl">
           <Link to="/insights" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Insights
+            Back to Storm Engineering
           </Link>
 
           <header className="mb-12">
@@ -21,6 +21,10 @@ const StpaSecStride = () => {
               Elevating Threat Modeling: The Power of STPA-Sec + STRIDE
             </h1>
             <div className="flex items-center gap-6 text-muted-foreground mb-8">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                <span>August 2, 2025</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
                 <span>8 min read</span>

@@ -7,7 +7,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="/ai_storm_logo_transparent.png"
+              src="/ai_storm_logo_transparent.svg"
               alt="AI-Storm Logo"
               className="h-10 w-10"
             />

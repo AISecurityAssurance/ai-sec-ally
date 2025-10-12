@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto animate-fade-in">
           <div className="flex justify-center mb-8">
             <img
-              src="/ai_storm_logo_transparent.png"
+              src="/ai_storm_logo_transparent.svg"
               alt="AI-Storm Logo"
               className="h-24 w-24 md:h-32 md:w-32"
             />

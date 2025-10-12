@@ -225,8 +225,8 @@ const Journey = () => {
                     Future Growth
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    Industry-specific templates and adaptations, enterprise integrations (CI/CD, ticketing),
-                    serving diverse user personas, and ecosystem growth through partnerships.
+                    Industry-specific templates and adaptations, serving diverse user personas,
+                    and ecosystem growth through partnerships.
                   </p>
                   <p className="text-xs text-muted-foreground italic">
                     From prototype to production for every industry

@@ -174,49 +174,62 @@ const Journey = () => {
         </div>
       </section>
 
-      {/* Three-Phase Roadmap */}
+      {/* Development Tracks */}
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="bg-card/50 border border-border rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Three-Phase Roadmap
+              <h3 className="text-2xl font-bold text-foreground mb-4 text-center">
+                Development Tracks
               </h3>
+              <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+                AI-Storm evolves through parallel capability tracks. After our MVP, we continuously expand
+                both automated analysis and formal verification while preparing for scale.
+              </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Phase 1: AI-Storm MVP
+                    Track 1: Automated Analysis
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-primary">
-                    Current
+                    Continuous Evolution
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Core STPA-Sec and STRIDE automation with foundational formal verification capabilities.
-                    Proving the integrated AI-driven approach works. Early prototype in active development.
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                    Starting with STPA-Sec and STRIDE, expanding to STPA-Sec+ with additional frameworks,
+                    enhanced memory and indexing, full repository analysis, and domain-specific fine-tuning.
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">
+                    From prototype to comprehensive analysis platform
                   </p>
                 </div>
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Phase 2: Formal Verification
+                    Track 2: Formal Verification
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-purple-500">
-                    Near-Term
+                    Continuous Evolution
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Expanding formal methods with temporal logic verification, attack tree analysis, and LLM-guided proof generation.
-                    Transforming security analysis from "comprehensive" to "provable."
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                    Starting with foundational formal methods, expanding to temporal logic verification,
+                    attack tree analysis, LLM-guided proof generation, and advanced verification techniques.
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">
+                    From comprehensive to provable security
                   </p>
                 </div>
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Phase 3: Scale & Ecosystem
+                    Track 3: Scale & Adoption
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-blue-500">
-                    Future Vision
+                    Future Growth
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    STPA-Sec+ with additional frameworks, industry-specific templates, enterprise integrations, and ecosystem growth.
-                    Making advanced security analysis accessible to every team and industry.
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                    Industry-specific templates and adaptations, enterprise integrations (CI/CD, ticketing),
+                    serving diverse user personas, and ecosystem growth through partnerships.
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">
+                    From prototype to production for every industry
                   </p>
                 </div>
               </div>

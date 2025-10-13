@@ -20,13 +20,13 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-0">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <div className="flex justify-center mb-8">
             <img
               src="/ai_storm_logo_transparent.svg"
               alt="AI-Storm Logo"
-              className="h-24 w-24 md:h-32 md:w-32"
+              className="h-20 w-20 md:h-32 md:w-32"
             />
           </div>
 

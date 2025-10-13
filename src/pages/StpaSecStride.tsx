@@ -178,16 +178,16 @@ const StpaSecStride = () => {
               </div>
 
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Our Solution: Intelligent Automation with Human Oversight</h3>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">Our Solution: AI-Driven Automation</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   AI Security Assurance is developing cutting-edge solutions to transform these challenges into competitive advantages:
                 </p>
 
                 <div className="space-y-6">
                   <div className="bg-background/50 p-6 rounded-lg">
-                    <h4 className="text-lg font-semibold mb-3 text-primary">Security Assurance Platform</h4>
+                    <h4 className="text-lg font-semibold mb-3 text-primary">AI-Storm Security Analysis Platform</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Our flagship platform leverages advanced AI to automate the STPA-Sec + STRIDE methodology while maintaining the critical human element. Security professionals remain in control, reviewing and refining AI-generated analyses to ensure accuracy and completeness. This human-in-the-loop approach combines the efficiency of automation with the nuanced judgment that only experienced practitioners can provide.
+                      Our flagship platform leverages advanced AI to fully automate the STPA-Sec + STRIDE methodology. Our interactive interface allows security professionals to review, edit, and refine AI-generated analyses as desired, providing flexibility to add expert oversight when needed while pursuing full automation as the goal.
                     </p>
                   </div>
 

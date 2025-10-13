@@ -180,7 +180,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
                     <Brain className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-xl text-foreground">
-                    Human-in-the-Loop Intelligence
+                    AI-Driven Automation
                   </CardTitle>
                 </div>
               </CardHeader>

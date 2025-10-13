@@ -36,8 +36,8 @@ const Hero = () => {
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             Security analysis shouldn't trap expert knowledge in tedious manual processes or force teams to choose between
-            thoroughness and speed. Starting with AI-driven security analysis you can use today, we're building toward formal
-            verification to deliver provable security for any system—from enterprise applications to
+            thoroughness and speed. Starting with AI-automated security analysis you can use today, we're building toward
+            AI-automated formal verification to deliver provable security for any system—from enterprise applications to
             safety and security-critical infrastructure.
           </p>
 

@@ -186,12 +186,11 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-muted-foreground leading-relaxed mb-4">
-                  AI-Storm's AI engine performs framework analysis—identifying
-                  threats, generating documentation, creating structured
-                  artifacts—while security analysts supervise through our
-                  interactive interface. Edit, add, or remove findings as needed.
-                  For safety and security-critical systems, expert oversight ensures quality;
-                  for routine applications, automation speeds delivery.
+                  AI-Storm's AI engine performs comprehensive framework analysis—identifying
+                  threats, generating documentation, creating structured artifacts—with full
+                  automation as the goal. Our interactive interface lets you review, edit, or
+                  refine findings as needed. Many users find expert oversight valuable during
+                  early adoption, but you control the level of human involvement that fits your workflow.
                 </CardDescription>
                 <div className="flex items-start space-x-2 text-sm text-primary">
                   <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -286,7 +285,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
                 <div>
                   <p className="font-semibold text-foreground mb-1">Mode:</p>
                   <p className="text-muted-foreground">
-                    AI augmentation + mandatory Human-in-the-Loop
+                    Full automation with optional expert oversight
                   </p>
                 </div>
                 <div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,11 +19,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 md:space-x-3">
-            <img
-              src="/ai_storm_logo_transparent.svg"
-              alt="AI-Storm Logo"
-              className="h-8 w-8 md:h-10 md:w-10"
-            />
+            <AnimatedLogo className="h-8 w-8 md:h-10 md:w-10" />
             <span className="text-base md:text-xl font-bold text-foreground">AI Security Assurance</span>
           </Link>
 

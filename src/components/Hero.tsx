@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-security.jpg";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Hero = () => {
   return (
@@ -23,11 +24,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-0">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <div className="flex justify-center mb-8">
-            <img
-              src="/ai_storm_logo_transparent.svg"
-              alt="AI-Storm Logo"
-              className="h-20 w-20 md:h-32 md:w-32"
-            />
+            <AnimatedLogo className="h-20 w-20 md:h-32 md:w-32" />
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">

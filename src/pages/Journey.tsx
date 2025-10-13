@@ -7,7 +7,7 @@ const Journey = () => {
       icon: Lightbulb,
       decorativeIcon: BookOpen,
       title: "The Academic Foundation",
-      content: "AI-Storm's foundation traces back to groundbreaking academic work integrating systematic security analysis with formal verification. Building on MIT Professor Nancy Leveson's STPA (System-Theoretic Process Analysis) methodology, Dr. William Young developed STPA-Sec—extending STPA from safety into security. Professor Shiu-kai Chin and Professor Susan Older of Syracuse University developed CSBD (Certified Security by Design), which formally verifies security properties. Their collaboration created STORM—a holistic systems security engineering framework.",
+      content: "AI-Storm's foundation traces back to groundbreaking academic work integrating systematic security analysis with formal verification. Building on MIT Professor Nancy Leveson's STPA (System-Theoretic Process Analysis) methodology, Dr. William Young developed STPA-Sec—extending STPA from safety into security. Professor Shiu-kai Chin and Professor Susan Older of Syracuse University developed CSBD (Certified Security by Design), which formally verifies security properties. Their collaboration created STORM (Systems-Theoretic Operational Risk Management)—a holistic systems security engineering framework.",
       side: "left"
     },
     {

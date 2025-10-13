@@ -183,8 +183,9 @@ const Journey = () => {
                 Development Tracks
               </h3>
               <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
-                AI-Storm evolves through parallel capability tracks. After our MVP, we continuously expand
-                both automated analysis and formal verification while preparing for scale.
+                AI-Storm is a unified platform where AI-automated security analysis provides the foundation for
+                AI-driven formal verification. After our MVP, we continuously evolve both capabilities together
+                while preparing for scale.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">

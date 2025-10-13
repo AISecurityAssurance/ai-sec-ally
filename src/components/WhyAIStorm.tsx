@@ -13,7 +13,7 @@ const WhyAIStorm = () => {
       icon: Wrench,
       title: "Simplify Framework Complexity",
       description:
-        "Systematic security frameworks are powerful but complex to execute. AI-Storm's AI engine performs the framework analysis—identifying threats, generating documentation, and creating structured artifacts—while security analysts supervise and guide the process through our interactive interface. Edit, add, or remove AI-generated findings as needed. The AI does the heavy lifting; you provide the expertise and oversight.",
+        "Systematic security frameworks are powerful but complex to execute. AI-Storm's AI engine performs comprehensive framework analysis—identifying threats, generating documentation, and creating structured artifacts—with full automation as the goal. Our interactive interface lets you review, edit, or refine findings as needed.",
     },
     {
       icon: Workflow,

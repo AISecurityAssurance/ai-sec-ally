@@ -189,8 +189,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
                   AI-Storm's AI engine performs comprehensive framework analysis—identifying
                   threats, generating documentation, creating structured artifacts—with full
                   automation as the goal. Our interactive interface lets you review, edit, or
-                  refine findings as needed. Many users find expert oversight valuable during
-                  early adoption, but you control the level of human involvement that fits your workflow.
+                  refine findings as needed.
                 </CardDescription>
                 <div className="flex items-start space-x-2 text-sm text-primary">
                   <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />

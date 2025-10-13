@@ -93,11 +93,12 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
 
               <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
                 <p className="text-base leading-relaxed">
-                  <strong className="text-foreground">Our Approach:</strong> We're building AI-Storm
-                  through parallel capability tracks. Starting with our MVP, we continuously expand both
-                  automated analysis (evolving to STPA-Sec+) and formal verification capabilities, while
-                  preparing to scale across industries. This research-intensive work requires continued
-                  R&D investment through grants, contracts, and partnerships.
+                  <strong className="text-foreground">Our Approach:</strong> AI-Storm is a unified platform where
+                  AI-automated security analysis provides the foundation for AI-driven formal verification. Starting
+                  with our MVP, we're building an integrated system that continuously evolves—expanding from STPA-Sec
+                  to STPA-Sec+ while simultaneously developing the formal verification capabilities that build upon this
+                  analysis. This research-intensive work requires continued R&D investment through grants, contracts,
+                  and partnerships.
                 </p>
               </div>
             </div>
@@ -316,10 +317,10 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               Shape the Future of Security Analysis
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're building AI-Storm through parallel capability tracks—continuously expanding automated
-              analysis, formal verification, and preparing for scaled adoption. We're looking for
-              forward-thinking organizations to partner with us—whether as early adopters, beta testers,
-              research collaborators, or investors in our vision of provable security.
+              We're building AI-Storm as a unified platform where automated security analysis feeds into
+              formal verification—continuously evolving both capabilities together while preparing for scaled
+              adoption. We're looking for forward-thinking organizations to partner with us—whether as early
+              adopters, beta testers, research collaborators, or investors in our vision of provable security.
             </p>
             <div className="bg-card/50 border border-border rounded-lg p-8 mb-8">
               <p className="text-lg font-semibold text-foreground mb-4">

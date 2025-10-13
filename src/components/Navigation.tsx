@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { to: "/products", label: "Products" },
+    { to: "/insights", label: "Storm Engineering" },
+    { to: "/journey", label: "Our Journey" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
@@ -13,25 +25,45 @@ const Navigation = () => {
             />
             <span className="text-xl font-bold text-foreground">AI Security Assurance</span>
           </Link>
-          
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/products" className="text-muted-foreground hover:text-primary transition-colors">
-              Products
-            </Link>
-            <Link to="/insights" className="text-muted-foreground hover:text-primary transition-colors">
-              Storm Engineering
-            </Link>
-            <Link to="/journey" className="text-muted-foreground hover:text-primary transition-colors">
-              Our Journey
-            </Link>
-            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="block text-muted-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -43,20 +43,20 @@ const Insights = () => {
 
           {/* Research Library Link */}
           <div className="mb-16 p-6 bg-card/20 border-border backdrop-blur-sm rounded-lg max-w-4xl mx-auto">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex items-start md:items-center gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
                   <Library className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Research Library</h3>
-                  <p className="text-muted-foreground mt-1">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground">Research Library</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mt-1">
                     Explore academic papers, standards, and technical resources
                   </p>
                 </div>
               </div>
-              <Link to="/insights/research">
-                <Button variant="hero">
+              <Link to="/insights/research" className="self-start md:self-auto">
+                <Button variant="hero" size="sm" className="md:size-default">
                   Browse Research
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -73,38 +73,38 @@ const Insights = () => {
                       Featured Article
                     </div>
                   )}
-                  <CardTitle className="text-2xl md:text-3xl text-foreground mb-3">
+                  <CardTitle className="text-xl md:text-2xl lg:text-3xl text-foreground mb-3">
                     {article.title}
                   </CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     {article.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {article.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-muted/50 rounded-full text-sm text-muted-foreground">
+                      <span key={tag} className="px-2 md:px-3 py-1 bg-muted/50 rounded-full text-xs md:text-sm text-muted-foreground">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-muted-foreground">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 text-muted-foreground text-xs md:text-sm">
                       <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{article.date}</span>
+                        <Calendar className="h-4 w-4 flex-shrink-0" />
+                        <span>{article.date}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        <span className="text-sm">{article.readTime}</span>
+                        <Clock className="h-4 w-4 flex-shrink-0" />
+                        <span>{article.readTime}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <BookOpen className="h-4 w-4" />
-                        <span className="text-sm">Technical Deep Dive</span>
+                      <div className="hidden sm:flex items-center gap-1">
+                        <BookOpen className="h-4 w-4 flex-shrink-0" />
+                        <span>Technical Deep Dive</span>
                       </div>
                     </div>
-                    <Link to={`/insights/${article.slug}`}>
-                      <Button variant="hero" className="group">
+                    <Link to={`/insights/${article.slug}`} className="self-start md:self-auto">
+                      <Button variant="hero" size="sm" className="md:size-default group">
                         Read Article
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Button>

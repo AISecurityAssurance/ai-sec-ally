@@ -17,13 +17,13 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-2 md:space-x-3">
             <img
               src="/ai_storm_logo_transparent.svg"
               alt="AI-Storm Logo"
-              className="h-10 w-10"
+              className="h-8 w-8 md:h-10 md:w-10"
             />
-            <span className="text-xl font-bold text-foreground">AI Security Assurance</span>
+            <span className="text-base md:text-xl font-bold text-foreground">AI Security Assurance</span>
           </Link>
 
           {/* Desktop Navigation */}

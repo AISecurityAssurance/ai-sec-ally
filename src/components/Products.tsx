@@ -40,11 +40,12 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
 
             <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                Our ultimate vision is <strong className="text-foreground">provable security through
-                formal verification</strong>—not just identifying vulnerabilities, but providing
-                mathematical proof that security properties hold in your system. This is the highest
+                Our ultimate vision is <strong className="text-foreground">AI-automated provable security through
+                formal verification</strong>—not just identifying vulnerabilities, but using AI to automatically generate
+                mathematical proofs that security properties hold in your system. This is the highest
                 level of assurance, essential for safety and security-critical applications, yet historically
-                inaccessible due to complexity and expertise requirements.
+                inaccessible due to complexity and expertise requirements. We're using AI to automate both the analysis
+                and the formal verification.
               </p>
 
               <Card className="bg-card/50 border-border">
@@ -63,7 +64,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
                     essential.
                   </p>
                   <p>
-                    We're actively researching multiple approaches to make formal verification accessible:
+                    We're actively researching multiple AI-driven approaches to automate formal verification:
                   </p>
                   <ul className="space-y-2 ml-6">
                     <li className="flex items-start">
@@ -84,8 +85,8 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
                     </li>
                   </ul>
                   <p className="font-semibold text-foreground">
-                    Our goal: democratize provable security, making formal verification practical for
-                    any development team—not just academic researchers.
+                    Our goal: use AI to automate formal verification, making provable security practical for
+                    any development team—not just academic researchers with specialized expertise.
                   </p>
                 </CardContent>
               </Card>
@@ -112,7 +113,7 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
               AI-Storm Core Capabilities
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Systematic security analysis with foundational formal verification
+              AI-automated security analysis with AI-driven formal verification
             </p>
           </div>
 

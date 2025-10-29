@@ -51,7 +51,7 @@ const About = () => {
                   />
                 </div>
                 <CardTitle className="text-xl text-foreground">
-                  Co-Founder & Co-CEO
+                  Co-Founder & CEO
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Lori Pickering
@@ -73,7 +73,7 @@ const About = () => {
                   <p className="text-muted-foreground text-left leading-relaxed indent-8 mt-4">
                   With deep
                   expertise in both AI/ML and systems security engineering, Lori is passionate about
-                  automating mission and systems assurance methodologies. As Co-founder and Co-CEO, she
+                  automating mission and systems assurance methodologies. As Co-founder and CEO, she
                   leads the company's vision to transform how organizations approach security analysis
                   by leveraging cutting-edge AI to make comprehensive security frameworks accessible and actionable.
                 </p>
@@ -91,7 +91,7 @@ const About = () => {
                   />
                 </div>
                 <CardTitle className="text-xl text-foreground">
-                  Co-Founder & Co-CEO
+                  Co-Founder & CTO
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Alvin Kuruvilla
@@ -109,7 +109,7 @@ const About = () => {
                 <p className="text-muted-foreground text-left leading-relaxed indent-8 mt-4">
                   His expertise in threat modeling and security
                   frameworks drives our mission to revolutionize how organizations approach
-                  security analysis through AI automation. As Co-founder and Co-CEO, Alvin leads
+                  security analysis through AI automation. As Co-founder and CTO, Alvin leads
                   the technical development of our security analysis platforms, bringing rigorous
                   academic research and enterprise security experience to create tools that make
                   comprehensive security analysis faster and more accessible.

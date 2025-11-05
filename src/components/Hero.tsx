@@ -29,16 +29,30 @@ const Hero = () => {
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
             AI-Storm:
-            <span className="block bg-gradient-accent bg-clip-text text-transparent">
-              Provable Security by Design
+            <span className="block text-3xl md:text-5xl bg-gradient-accent bg-clip-text text-transparent">
+              AI-powered Systems-Theoretic Operational Risk Mitigation
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Security analysis shouldn't trap expert knowledge in tedious manual processes or force teams to choose between
-            thoroughness and speed. Starting with AI-automated security analysis you can use today, we're building toward
-            AI-automated formal verification to deliver provable security for any system—from enterprise applications to
-            safety and security-critical infrastructure.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
+            AI-Storm finds deep, systemic, and logical vulnerabilities in your systems and software—the kind that
+            memory-safe languages and traditional tools miss. We automate end-to-end security analysis from
+            high-level STPA-Sec threat modeling down to your actual source code (C/C++, Java, Go, Python),
+            and formally verify the results.
+          </p>
+
+          <p className="text-lg md:text-xl text-muted-foreground/90 mb-6 max-w-3xl mx-auto leading-relaxed">
+            Our interactive web UI provides full transparency and control—review, refine, or override AI decisions
+            at every step with human-in-the-loop oversight when you need it.
+          </p>
+
+          <p className="text-lg md:text-xl text-muted-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+            The output: a formally verified, machine-readable assurance case that either proves your system is
+            secure-by-design or pinpoints the exact logical vulnerabilities that must be fixed.
+          </p>
+
+          <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto italic">
+            Find the deep, systemic flaws that other security tools miss—in any codebase, from new systems to legacy code.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

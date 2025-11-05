@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Loader2 } from "lucide-react";
+import { Mail, Loader2 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
 interface ContactProps {
@@ -153,39 +153,29 @@ const Contact = ({ showTitle = true }: ContactProps) => {
             </CardContent>
           </Card>
           
-          <div className="space-y-8">
-            <div className="text-center lg:text-left">
+          <div className="flex flex-col justify-center items-center text-center space-y-8">
+            <div>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Get in touch</h3>
               <p className="text-muted-foreground mb-8">
                 Ready to transform your security analysis approach? Whether you're interested in AI-Storm's automated STPA-Sec and STRIDE analysis or our vision for formal verification, our team is here to help.
               </p>
             </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-muted-foreground">contact@aisecurityassurance.com</p>
-                </div>
+
+            <div className="flex items-center space-x-4">
+              <div className="p-3 bg-primary/10 rounded-lg">
+                <Mail className="h-6 w-6 text-primary" />
               </div>
-              
-              
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Address</h4>
-                  <p className="text-muted-foreground">
-                    AI Security Assurance, LLC<br />
-                    8401 MAYLAND DR #8133<br />
-                    RICHMOND, VA 23294
-                  </p>
-                </div>
+              <div>
+                <h4 className="font-semibold text-foreground">Email</h4>
+                <p className="text-muted-foreground">contact@aisecurityassurance.com</p>
               </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20 max-w-md">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Remote-first company</strong><br />
+                We're registered in Virginia and operate as a distributed team across the United States.
+              </p>
             </div>
           </div>
         </div>

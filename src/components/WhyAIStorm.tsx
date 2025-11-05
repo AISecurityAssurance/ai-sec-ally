@@ -1,25 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Wrench, Workflow } from "lucide-react";
+import { Workflow, Network, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const WhyAIStorm = () => {
   const benefits = [
     {
-      icon: Zap,
-      title: "Accelerate Time-to-Delivery",
-      description:
-        "Traditional security analysis is time-intensive. AI-Storm automates the heavy lifting, dramatically reducing the time required to deliver comprehensive security analysis—whether that's hours instead of days, or days instead of weeks.",
-    },
-    {
-      icon: Wrench,
-      title: "Simplify Framework Complexity",
-      description:
-        "Systematic security frameworks are powerful but complex to execute. AI-Storm's AI engine performs comprehensive framework analysis—identifying threats, generating documentation, and creating structured artifacts—with full automation as the goal. Our interactive interface lets you review, edit, or refine findings as needed.",
-    },
-    {
       icon: Workflow,
-      title: "Ensure Comprehensive Coverage",
+      title: "Automates STPA-Sec End-to-End",
       description:
-        "Manual analysis is prone to oversights and inconsistencies. AI-Storm systematically applies proven security frameworks across your entire system, ensuring thorough threat identification and consistent analysis quality—reducing the risk of missing critical vulnerabilities.",
+        "First fully automated STPA-Sec engine—from control structure analysis through UCA identification to formal loss scenario generation. Domain-specific taxonomies constrain LLMs to reduce hallucinations and ensure high-level security goals align with industry standards and compliance requirements. Interactive web UI provides human-in-the-loop oversight.",
+    },
+    {
+      icon: Network,
+      title: "Bridges High-Level Threats to Code",
+      description:
+        "Sentinel-M2 engine builds a multi-language (C/C++, Java, Go, Python) semantic abstraction layer using Code Property Graphs. This allows high-level STPA-Sec analysis to reason about actual implementation—solving the 'design-only' limitation.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Multi-Framework Integration",
+      description:
+        "Unifies STPA-Sec with STRIDE threat modeling, attack tree analysis, and formal scenario generation. Creates a comprehensive, machine-queryable security model that covers system-level to implementation-level threats.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Formal Verification & Assurance Cases",
+      description:
+        "Generates formally verified, machine-readable GSN assurance cases. Combines targeted SAST/DAST analysis with LLM-in-the-loop formal verification to either prove secure-by-design or pinpoint exact logical vulnerabilities.",
     },
   ];
 
@@ -28,14 +34,14 @@ const WhyAIStorm = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Why AI-Storm?
+            Core Capabilities
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Security analysis for the speed of modern development
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Four integrated innovations that bridge the gap from high-level security analysis to verified code
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {benefits.map((benefit, index) => (
             <Card
               key={index}

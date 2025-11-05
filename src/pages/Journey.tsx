@@ -49,22 +49,22 @@ const Journey = () => {
       icon: Sparkles,
       decorativeIcon: Rocket,
       title: "The Complete Vision: AI-Storm",
-      content: "As they explored the landscape, another opportunity emerged. While STPA-Sec combined with STRIDE provides powerful analysis, emerging threat domains demand additional frameworks. Their expanded vision: build STPA-Sec+—a comprehensive analysis platform with STPA-Sec as the backbone, incorporating proven frameworks for emerging domains. AI-Storm represents this complete vision: AI-automated STPA-Sec+ combined with AI-driven formal verification, transforming provable security from a manual, expert-only capability into an accessible, automated reality.",
+      content: "Make provable security accessible to every development team. AI-Storm bridges the chasm of abstraction from high-level STPA-Sec analysis to mathematically verified code through five integrated innovations: automated STPA-Sec backbone, Sentinel-M2 code analysis, UCA-to-code tracing, LLM-in-the-loop formal verification, and machine-readable GSN assurance cases. The vision expands beyond the initial implementation: STPA-Sec+ will incorporate additional proven frameworks for emerging threat domains, making comprehensive, provable security the default for any team building any system—from mobile apps to medical devices, from new codebases to legacy systems.",
       side: "left",
       highlight: true
     },
     {
       icon: Target,
-      decorativeIcon: Target,
-      title: "Our Mission",
-      content: "Make security-by-design the default, not the exception. For too long, comprehensive security analysis has been too slow, too manual, and too scarce. AI-Storm changes this equation. By automating the labor-intensive parts of STPA-Sec and integrating proven frameworks like STRIDE, we're making it possible for any team to perform systematic security analysis—whether they're building a mobile app or a medical device.",
+      decorativeIcon: Zap,
+      title: "Why Now?",
+      content: "The methodologies existed. The vision existed. But the technology wasn't ready—until now. Recent advances in Large Language Models have finally made comprehensive automation practical. LLMs can handle the cognitive-intensive analysis tasks that were previously manual and time-consuming. They can guide formal verification through an LLM-in-the-loop approach, making theorem proving accessible without specialized expertise. The AI breakthrough transforms what was theoretically possible into practically achievable: security analysis that's both comprehensive and fast, verification that's both rigorous and automated.",
       side: "right"
     },
     {
       icon: Sparkles,
       decorativeIcon: Sparkles,
-      title: "The Path to Provable Security",
-      content: "Our ultimate vision: make provable security accessible to every development team. While AI-Storm's initial prototype focuses on automating STPA-Sec and STRIDE analysis, this is just the first step. We're exploring multiple approaches to make formal verification accessible through AI—from temporal logic verification to attack tree formal analysis to LLM-guided proof generation. The goal: automate tedious processes while enabling experts to scale their knowledge and allowing teams without specialized expertise to benefit from these powerful techniques.",
+      title: "The Development Path",
+      content: "We're building AI-Storm through three phases. Phase 1 (demo/prototype) proves the complete technical approach—all 5 innovations working together. Phase 2 adds the interactive web UI with Aisha chat agent, enabling human-in-the-loop oversight and collecting data for evaluation and fine-tuning. Phase 3 scales to production with expanded framework support (STPA-Sec+), enterprise integrations, and deployment to diverse teams and industries. Each phase builds on the last, evolving the complete pipeline from proof-of-concept to production tool.",
       side: "left"
     }
   ];
@@ -180,56 +180,56 @@ const Journey = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-card/50 border border-border rounded-lg p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4 text-center">
-                Development Tracks
+                Development Phases
               </h3>
               <p className="text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
-                AI-Storm is a unified platform where AI-automated security analysis provides the foundation for
-                AI-driven formal verification. After our MVP, we continuously evolve both capabilities together
-                while preparing for scale.
+                AI-Storm bridges the chasm of abstraction from high-level security analysis to verified code.
+                We're building all five innovations together through three development phases.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Track 1: Automated Analysis
+                    Phase 1: Demo/Prototype
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-primary">
-                    Continuous Evolution
+                    Current Focus
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    Starting with STPA-Sec and STRIDE, expanding to STPA-Sec+ with additional frameworks,
-                    enhanced memory and indexing, full repository analysis, and domain-specific fine-tuning.
+                    Building the complete end-to-end pipeline: automated STPA-Sec + Sentinel-M2 code analysis +
+                    UCA-to-code tracing + targeted SAST/DAST + formal verification + GSN assurance cases.
                   </p>
                   <p className="text-xs text-muted-foreground italic">
-                    From prototype to comprehensive analysis platform
+                    Proving the technical approach works
                   </p>
                 </div>
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Track 2: Formal Verification
+                    Phase 2: Interactive Web UI
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-purple-500">
-                    Continuous Evolution
+                    Next Step
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    Starting with foundational formal methods, expanding to temporal logic verification,
-                    attack tree analysis, LLM-guided proof generation, and advanced verification techniques.
+                    Building human-in-the-loop interface with Aisha chat agent. Enables expert oversight,
+                    refinement of AI-generated analysis, and data collection for evaluation and fine-tuning.
                   </p>
                   <p className="text-xs text-muted-foreground italic">
-                    From comprehensive to provable security
+                    Making the technology accessible and refinable
                   </p>
                 </div>
                 <div className="bg-background/50 rounded-lg p-6 border border-border hover:border-primary/50 transition-colors">
                   <p className="font-semibold text-foreground mb-2 text-lg">
-                    Track 3: Scale & Adoption
+                    Phase 3: Production Tool
                   </p>
                   <p className="text-sm text-muted-foreground mb-3 font-medium text-blue-500">
-                    Future Growth
+                    Future Goal
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    Expanding from early adopters to serve diverse teams and industries at scale.
+                    Scaling to production with expanded framework support (STPA-Sec+), enterprise integrations,
+                    and deployment to diverse teams and industries.
                   </p>
                   <p className="text-xs text-muted-foreground italic">
-                    Making advanced security analysis accessible everywhere
+                    Security-by-design for everyone
                   </p>
                 </div>
               </div>

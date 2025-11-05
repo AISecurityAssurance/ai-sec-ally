@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Users,
   Sparkles,
+  Zap,
 } from "lucide-react";
 
 interface ProductsProps {
@@ -24,282 +25,208 @@ interface ProductsProps {
 const Products = ({ showContactButton = true }: ProductsProps) => {
   return (
     <div className="min-h-screen bg-background">
-      {/* The Vision: Provable Security by Design */}
+      {/* The Technical Approach */}
       <section className="py-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                The Vision: Provable Security by Design
+                Our Technical Approach
               </h2>
               <p className="text-lg text-muted-foreground">
-                Mathematical proof that your system is secure
+                Bridging the chasm of abstraction from system-level security to verified code
               </p>
             </div>
 
-            <div className="space-y-6 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
-                Our ultimate vision is <strong className="text-foreground">AI-automated provable security through
-                formal verification</strong>—not just identifying vulnerabilities, but using AI to automatically generate
-                mathematical proofs that security properties hold in your system. This is the highest
-                level of assurance, essential for safety and security-critical applications, yet historically
-                inaccessible due to complexity and expertise requirements. We're using AI to automate both the analysis
-                and the formal verification.
-              </p>
+            <div className="space-y-8 text-muted-foreground">
+              <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                <p className="text-base leading-relaxed">
+                  Traditional tools scan "bottom-up" for millions of implementation bugs but miss systemic design flaws.
+                  AI-Storm provides <strong className="text-foreground">automated, end-to-end STPA-Sec analysis</strong> for
+                  any system—hardware, software, processes, or organizations. For software systems, we go further: bridging the
+                  <strong className="text-foreground"> "chasm of abstraction"</strong> between high-level, system-theoretic
+                  security analysis and low-level, implementation-specific source code—tracing systemic vulnerabilities down to
+                  exact lines of code and formally verifying the results.
+                  Our solution is built on five core innovations:
+                </p>
+              </div>
 
               <Card className="bg-card/50 border-border">
                 <CardHeader>
                   <CardTitle className="text-xl text-foreground">
-                    Beyond Traditional Security Analysis
+                    Innovation 1: The Automated, General-Purpose STPA-Sec Backbone
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-muted-foreground">
                   <p>
-                    Traditional security analysis—even systematic approaches like STPA-Sec—identifies
-                    potential vulnerabilities and recommends mitigations. Formal verification provides
-                    <strong className="text-foreground"> mathematical proof</strong> that security
-                    properties actually hold. For medical devices, aerospace systems, autonomous
-                    vehicles, and critical infrastructure, this level of assurance isn't optional—it's
-                    essential.
+                    We are building the world's first fully automated, STPA-Sec analysis engine. This AI-driven "backbone"
+                    is a general-purpose innovation of great importance to the analysis community. While fully automated,
+                    it also runs step-by-step, allowing a user to pause after each sub-step (e.g., after defining losses,
+                    hazards, or control structures) to edit the LLM-generated artifacts.
                   </p>
                   <p>
-                    We're actively researching multiple AI-driven approaches to automate formal verification:
-                  </p>
-                  <ul className="space-y-2 ml-6">
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Temporal logic verification of control actions and security constraints</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Attack tree formal analysis</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <span>Complete mediation proofs</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <span>LLM-guided proof generation and validation</span>
-                    </li>
-                  </ul>
-                  <p className="font-semibold text-foreground">
-                    Our goal: use AI to automate formal verification, making provable security practical for
-                    any development team—not just academic researchers with specialized expertise.
+                    This process is managed via an interactive web UI with "Aisha," an integrated chat agent that guides users
+                    through the analysis and answers questions. This "Human-in-the-Loop" (HITL) approach allows security experts
+                    to oversee and refine the AI-generated analysis at every step, ensuring accuracy and alignment with domain-specific
+                    requirements.
                   </p>
                 </CardContent>
               </Card>
 
-              <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                <p className="text-base leading-relaxed">
-                  <strong className="text-foreground">Our Approach:</strong> AI-Storm is a unified platform where
-                  AI-automated security analysis provides the foundation for AI-driven formal verification. Starting
-                  with our MVP, we're building an integrated system that continuously evolves—expanding from STPA-Sec
-                  to STPA-Sec+ while simultaneously developing the formal verification capabilities that build upon this
-                  analysis. This research-intensive work requires continued R&D investment through grants, contracts,
-                  and partnerships.
-                </p>
-              </div>
+              <Card className="bg-card/50 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-foreground">
+                    Innovation 2: STPA-Sec for Software via Semantic Abstraction
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    Our second innovation extends this general-purpose backbone to the software domain—something that has not
+                    been done. This "Sentinel-M2" component solves the unmanageable complexity of code. It ingests millions
+                    of lines of heterogeneous code (C/C++, Java, Go) into a unified Code Property Graph (CPG) and uses novel
+                    graph-theory and data-flow analysis to algorithmically infer the high-level control structure from the
+                    code itself.
+                  </p>
+                  <p>
+                    This inferred model (Controllers, Process Variables, etc.) is fed into the STPA-Sec backbone (Innovation 1),
+                    where the SME can validate or refine it using the HITL web UI.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-foreground">
+                    Innovation 3: "UCA-to-Code" Traceability & Targeted Analysis
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    This innovation connects the analysis to the implementation. Once the STPA-Sec analysis (from 1 & 2)
+                    generates its conceptual flaws (Unsafe/Insecure Control Actions, or UCAs), our "UCA-to-Code" engine translates each
+                    UCA (e.g., "Controller provides launch_missile command when target_lock is false") into a targeted,
+                    graph-based query and traces it to the exact lines of code.
+                  </p>
+                  <p>
+                    The traced code snippet becomes a high-priority target for analysis using static (SAST), dynamic (DAST),
+                    or other traditional code analysis tools, searching for implementation-level evidence that a vulnerability
+                    exists or mitigations are satisfied. This targeted approach minimizes false positives by focusing
+                    analysis on specific, high-risk code paths identified through system-level reasoning.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-foreground">
+                    Innovation 4: Automated Formal Verification
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    To provide mathematical certainty, our pipeline auto-translates the code and security constraint into a
+                    formal problem for a theorem prover (Lean). We use an <strong className="text-foreground">"LLM-in-the-loop"</strong>
+                    co-pilot to generate and verify a mathematical proof of the vulnerability's existence (or absence).
+                  </p>
+                  <p>
+                    This is a breakthrough in making formal verification accessible—traditionally requiring specialized expertise
+                    and months of effort, now automated through AI-guided proof generation. The result is provable evidence,
+                    not just detection.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-foreground">
+                    Innovation 5: Machine-Readable GSN Assurance Cases
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    The final innovation links all evidence back to high-level security goals through
+                    <strong className="text-foreground"> Goal Structuring Notation (GSN) assurance cases</strong>.
+                    This machine-readable artifact automatically synthesizes evidence from STPA-Sec analysis,
+                    targeted code analysis (Innovation 3), and formal verification (Innovation 4).
+                  </p>
+                  <p>
+                    The result is a provable, traceable security argument—from high-level security goals down through
+                    architectural analysis to verified code—providing verifiable evidence of either a correctly implemented
+                    mitigation or a specific vulnerability that must be addressed.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Capabilities - Phase 1 */}
-      <section className="py-24 bg-gradient-primary">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              AI-Storm Core Capabilities
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              AI-automated security analysis with AI-driven formal verification
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Card 1: STPA-Sec Foundation */}
-            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
-              <CardHeader>
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Building2 className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">
-                    STPA-Sec: The Backbone
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
-                  AI-Storm is built on Systems-Theoretic Process Analysis for
-                  Security (STPA-Sec), a systematic methodology that identifies
-                  security vulnerabilities at the system level—not just
-                  component-level threats. STPA-Sec ensures comprehensive coverage
-                  of emergent security properties that traditional methods miss.
-                </CardDescription>
-                <div className="flex items-start space-x-2 text-sm text-primary">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>
-                    Identify system-level security issues before they become incidents
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Card 2: Integrated Threat Modeling */}
-            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
-              <CardHeader>
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <ShieldCheck className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">
-                    Multi-Framework Analysis
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
-                  AI-Storm integrates STRIDE threat modeling alongside STPA-Sec,
-                  providing both system-level and component-level security analysis.
-                  With support for additional frameworks, AI-Storm adapts to your
-                  security needs—including emerging areas like AI-based systems.
-                </CardDescription>
-                <div className="flex items-start space-x-2 text-sm text-primary">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>Comprehensive coverage across methodologies</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Card 3: AI-Augmented Workflow */}
-            <Card className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant">
-              <CardHeader>
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Brain className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">
-                    AI-Driven Automation
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed mb-4">
-                  AI-Storm's AI engine performs comprehensive framework analysis—identifying
-                  threats, generating documentation, creating structured artifacts—with full
-                  automation as the goal. Our interactive interface lets you review, edit, or
-                  refine findings as needed.
-                </CardDescription>
-                <div className="flex items-start space-x-2 text-sm text-primary">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>Scale expertise without sacrificing quality</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="bg-primary/5 p-8 rounded-lg border border-primary/20">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Continuously Evolving Platform
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                AI-Storm is being developed in rapid, iterative cycles to keep pace with the AI industry.
-                We're currently building our MVP with an interactive web UI (launching by year-end),
-                integrating core STPA-Sec, STRIDE, and foundational formal verification capabilities.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">On the horizon:</strong> Continuously expanding both
-                automated analysis (STPA-Sec+ with additional frameworks, enhanced repository ingestion,
-                domain-specific fine-tuning) and formal verification methods (temporal logic, attack trees,
-                LLM-guided proofs), while preparing for industry-specific adaptations and enterprise scale.
-                As the AI landscape evolves, so does AI-Storm—we adapt our priorities based on emerging threats,
-                research breakthroughs, and partner feedback.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Who Is AI-Storm For */}
       <section className="py-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Security Analysis for Every System
+              Software Systems & Beyond
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We believe all systems deserve security-by-design. AI-Storm serves
-              teams across the spectrum—from rapid development teams to
-              high-assurance engineering groups.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+              AI-Storm provides automated STPA-Sec analysis for any system. For software systems, we go further—
+              bridging from high-level security analysis down to your actual code with formal verification.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Left Column: Enterprise & Routine Systems */}
+            {/* Left Column: Software Systems */}
             <Card className="bg-card/50 border-border">
               <CardHeader>
                 <CardTitle className="text-2xl text-foreground mb-2">
-                  Enterprise & Routine Systems
+                  Software Systems
                 </CardTitle>
                 <CardDescription className="text-base">
-                  Web applications, mobile apps, SaaS platforms, internal tools
+                  C/C++, Java, Go, Python codebases—from web apps to embedded systems
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Mode:</p>
+                  <p className="font-semibold text-foreground mb-1">What You Get:</p>
                   <p className="text-muted-foreground">
-                    AI-driven automation with optional expert review
+                    Full end-to-end analysis: automated STPA-Sec → Sentinel-M2 code analysis →
+                    UCA-to-code tracing → targeted SAST/DAST → formal verification → GSN assurance cases
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Benefit:</p>
+                  <p className="font-semibold text-foreground mb-1">Output:</p>
                   <p className="text-muted-foreground">
-                    Fast, comprehensive analysis without dedicated security teams
-                  </p>
-                </div>
-                <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
-                  <p className="text-sm text-muted-foreground italic">
-                    <strong className="text-foreground">Example:</strong> Identify
-                    authentication vulnerabilities in a microservices architecture
-                    in hours, not weeks
+                    Machine-readable assurance case with mathematical proofs, linking high-level security
+                    goals to verified code implementation
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Right Column: Safety & Security-Critical Systems */}
+            {/* Right Column: Non-Software Systems */}
             <Card className="bg-card/50 border-border">
               <CardHeader>
                 <CardTitle className="text-2xl text-foreground mb-2">
-                  Safety & Security-Critical Systems
+                  Hardware, Processes & Organizations
                 </CardTitle>
                 <CardDescription className="text-base">
-                  Aerospace, defense, medical devices, critical infrastructure, automotive
+                  Medical devices, industrial control systems, operational procedures, organizational policies
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Mode:</p>
+                  <p className="font-semibold text-foreground mb-1">What You Get:</p>
                   <p className="text-muted-foreground">
-                    Full automation with optional expert oversight
+                    Automated STPA-Sec analysis identifying system-level security vulnerabilities in hardware
+                    components, human processes, organizational structures, and physical systems
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Benefit:</p>
+                  <p className="font-semibold text-foreground mb-1">Output:</p>
                   <p className="text-muted-foreground">
-                    Expert-level analysis with AI efficiency
-                  </p>
-                </div>
-                <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
-                  <p className="text-sm text-muted-foreground italic">
-                    <strong className="text-foreground">Example:</strong> Systematic
-                    security analysis for autonomous vehicle control systems with
-                    expert oversight
+                    Comprehensive threat analysis and security requirements—without needing specialized STPA-Sec expertise
                   </p>
                 </div>
               </CardContent>
@@ -314,13 +241,12 @@ const Products = ({ showContactButton = true }: ProductsProps) => {
           <div className="max-w-4xl mx-auto text-center">
             <Users className="h-16 w-16 text-primary mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Shape the Future of Security Analysis
+              Get Early Access
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're building AI-Storm as a unified platform where automated security analysis feeds into
-              formal verification—continuously evolving both capabilities together while preparing for scaled
-              adoption. We're looking for forward-thinking organizations to partner with us—whether as early
-              adopters, beta testers, research collaborators, or investors in our vision of provable security.
+              We're building AI-Storm to bridge the gap from high-level security analysis to verified code.
+              We're looking for forward-thinking organizations to partner with us—whether as early adopters,
+              beta testers, research collaborators, or investors.
             </p>
             <div className="bg-card/50 border border-border rounded-lg p-8 mb-8">
               <p className="text-lg font-semibold text-foreground mb-4">

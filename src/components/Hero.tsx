@@ -55,6 +55,10 @@ const Hero = () => {
             Find the deep, systemic flaws that other security tools miss—in any codebase, from new systems to legacy code.
           </p>
 
+          <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto italic">
+            We address the OWASP Top 10 "Insecure Design" category, bridging system-level design and implementation to surface design flaws early.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/contact">
               <Button variant="hero" size="lg">

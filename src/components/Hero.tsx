@@ -20,8 +20,8 @@ const Hero = () => {
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-0">
+      {/* Content - pt-20 accounts for fixed navbar height across all screen sizes */}
+      <div className="relative z-10 container mx-auto px-6 text-center pt-20">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <div className="flex justify-center mb-8">
             <AnimatedLogo className="h-20 w-20 md:h-32 md:w-32" />

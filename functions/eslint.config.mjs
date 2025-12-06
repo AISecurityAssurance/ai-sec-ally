@@ -5,9 +5,10 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    files: ["src/**/*.ts"],
     languageOptions: {
       parserOptions: {
-        project: ["tsconfig.json", "tsconfig.dev.json"],
+        project: ["tsconfig.json"],
         sourceType: "module",
       },
     },

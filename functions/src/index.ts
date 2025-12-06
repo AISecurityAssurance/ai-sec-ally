@@ -110,16 +110,16 @@ export const contactForm = onRequest({
     await sgMail.send(msg);
 
     // Optional: Store in Firestore for backup/analytics
-//     await admin.firestore().collection("contact-submissions").add({
-//       firstName,
-//       lastName,
-//       email,
-//       company: company || null,
-//       message,
-//       timestamp: admin.firestore.FieldValue.serverTimestamp(),
-//       userAgent: req.get("User-Agent") || null,
-//       ip: req.ip || null,
-//     });
+    //     await admin.firestore().collection("contact-submissions").add({
+    //       firstName,
+    //       lastName,
+    //       email,
+    //       company: company || null,
+    //       message,
+    //       timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    //       userAgent: req.get("User-Agent") || null,
+    //       ip: req.ip || null,
+    //     });
 
     // Success response
     res.status(200).json({

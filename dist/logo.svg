@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circles (light blue) -->
+  <circle cx="100" cy="100" r="85" stroke="hsl(210, 40%, 55%)" stroke-width="6" fill="none" opacity="0.6"/>
+  <circle cx="100" cy="100" r="75" stroke="hsl(210, 40%, 55%)" stroke-width="5" fill="none" opacity="0.4"/>
+
+  <!-- Inner circle with white fill -->
+  <circle cx="100" cy="100" r="65" fill="white" stroke="hsl(210, 40%, 55%)" stroke-width="4"/>
+
+  <!-- Checkmark (dark blue) -->
+  <path d="M75 100 L90 115 L125 75" stroke="hsl(215, 20%, 15%)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Flow nodes (dark blue circles) -->
+  <circle cx="115" cy="95" r="6" fill="hsl(215, 20%, 15%)"/>
+  <circle cx="125" cy="110" r="6" fill="hsl(215, 20%, 15%)"/>
+  <circle cx="135" cy="125" r="6" fill="hsl(215, 20%, 15%)"/>
+
+  <!-- Connecting flow lines (light blue) -->
+  <path d="M115 95 Q120 102 125 110" stroke="hsl(210, 40%, 55%)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M125 110 Q130 117 135 125" stroke="hsl(210, 40%, 55%)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Curved accent lines (light blue, lower right) -->
+  <path d="M130 140 Q145 135 155 145" stroke="hsl(200, 50%, 65%)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M125 150 Q140 145 150 155" stroke="hsl(200, 50%, 65%)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Top arc accent (light blue) -->
+  <path d="M60 45 Q100 30 140 45" stroke="hsl(200, 50%, 65%)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+</svg>

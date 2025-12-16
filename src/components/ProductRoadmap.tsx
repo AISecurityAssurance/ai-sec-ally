@@ -83,9 +83,8 @@ const ProductRoadmap = () => {
                 >
 
                   <div
-                    className={`h-full rounded-xl border ${borderColor} ${
-                      tier.highlight ? "bg-card/80 shadow-lg" : "bg-card/40"
-                    } p-8 transition-all duration-300 hover:border-opacity-60`}
+                    className={`h-full rounded-xl border ${borderColor} ${tier.highlight ? "bg-card/80 shadow-lg" : "bg-card/40"
+                      } p-8 transition-all duration-300 hover:border-opacity-60`}
                   >
                     {/* Tier Header */}
                     <div className="mb-6">

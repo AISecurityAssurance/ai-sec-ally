@@ -8,14 +8,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
-  Building2,
-  ShieldCheck,
-  Brain,
   ArrowRight,
   CheckCircle2,
   Users,
   Sparkles,
-  Zap,
 } from "lucide-react";
 
 interface ProductsProps {

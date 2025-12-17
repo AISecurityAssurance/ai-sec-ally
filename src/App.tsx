@@ -13,6 +13,8 @@ import Insights from "./pages/Insights";
 import StpaSecStride from "./pages/StpaSecStride";
 import AiDrivenStpaSecIncidentResponse from "./pages/AiDrivenStpaSecIncidentResponse";
 import ResearchLibrary from "./pages/ResearchLibrary";
+import Careers from "./pages/Careers";
+import CareerDetail from "./pages/CareerDetail";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/insights/ai-driven-stpa-sec-incident-response" element={<AiDrivenStpaSecIncidentResponse />} />
           <Route path="/insights/research" element={<ResearchLibrary />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:slug" element={<CareerDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

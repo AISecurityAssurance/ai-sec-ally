@@ -251,7 +251,7 @@ export const careerApplication = onRequest({
     `;
 
     if (uploads.length > 1) {
-      htmlContent += `<p><small>Note: Cover letter attached as separate file</small></p>`;
+      htmlContent += "<p><small>Note: Cover letter attached as separate file</small></p>";
     }
 
     // Prepare attachments for SendGrid

@@ -144,9 +144,7 @@ export const careerApplication = onRequest({
   memory: "512MiB",
   cors: true,
   secrets: [],
-  invoker: "public",
-  // Disable body parsing to allow Busboy to handle multipart data
-  consumeBody: false
+  invoker: "public"
 }, async (req: Request, res: Response) => {
   // Handle CORS
   if (corsHandler(req, res)) return;
@@ -224,8 +222,16 @@ export const careerApplication = onRequest({
         reject(err);
       });
 
-      // Pipe the request to busboy
-      req.pipe(busboy);
+      // Firebase Functions v2 pre-buffers the request body into req.rawBody
+      // We must use busboy.end(rawBody) instead of req.pipe(busboy)
+      // because the request stream has already been consumed
+      const rawBody = (req as any).rawBody as Buffer;
+      if (rawBody) {
+        busboy.end(rawBody);
+      } else {
+        // Fallback for emulator or edge cases
+        req.pipe(busboy);
+      }
     });
 
     // Validate required fields

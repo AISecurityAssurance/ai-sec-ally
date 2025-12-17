@@ -180,7 +180,7 @@ export const careerApplication = onRequest({
     });
 
     // Process file uploads
-    busboy.on("file", (fieldname: string, file: NodeJS.ReadableStream, info: { filename: string; mimeType: string }) => {
+    busboy.on("file", (fieldname: string, file: NodeJS.ReadableStream, info: { filename: string; encoding: string; mimeType: string }) => {
       const { filename, mimeType } = info;
       const chunks: Buffer[] = [];
 
@@ -282,6 +282,10 @@ export const careerApplication = onRequest({
 
   } catch (error) {
     console.error("Career application error:", error);
+    if (error instanceof Error) {
+      console.error("Error message:", error.message);
+      console.error("Error stack:", error.stack);
+    }
     res.status(500).json({
       error: "Failed to submit application. Please try again later or email your resume to careers@aisecurityassurance.com"
     });

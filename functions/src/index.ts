@@ -170,18 +170,26 @@ export const careerApplication = onRequest({
     sgMail.setApiKey(sendGridApiKeyValue);
 
     // Parse multipart form data
-    const busboy = Busboy({ headers: req.headers });
+    const busboy = Busboy({
+      headers: req.headers,
+      limits: {
+        fileSize: 10 * 1024 * 1024, // 10MB limit
+        files: 2 // Maximum 2 files (resume + cover letter)
+      }
+    });
     const fields: Record<string, string> = {};
     const uploads: { filename: string; buffer: Buffer; mimetype: string }[] = [];
 
     // Process form fields
     busboy.on("field", (fieldname: string, val: string) => {
+      console.log(`Received field: ${fieldname}`);
       fields[fieldname] = val;
     });
 
     // Process file uploads
     busboy.on("file", (fieldname: string, file: NodeJS.ReadableStream, info: { filename: string; encoding: string; mimeType: string }) => {
       const { filename, mimeType } = info;
+      console.log(`Receiving file: ${filename}, type: ${mimeType}`);
       const chunks: Buffer[] = [];
 
       file.on("data", (data: Buffer) => {
@@ -190,19 +198,38 @@ export const careerApplication = onRequest({
 
       file.on("end", () => {
         const buffer = Buffer.concat(chunks);
+        console.log(`File received: ${filename}, size: ${buffer.length} bytes`);
         uploads.push({
           filename,
           buffer,
           mimetype: mimeType
         });
       });
+
+      file.on("error", (err) => {
+        console.error(`File stream error for ${filename}:`, err);
+      });
     });
 
     // Wait for all parsing to complete
     await new Promise<void>((resolve, reject) => {
-      busboy.on("finish", resolve);
-      busboy.on("error", reject);
-      req.pipe(busboy);
+      busboy.on("finish", () => {
+        console.log("Busboy parsing finished");
+        resolve();
+      });
+      busboy.on("error", (err) => {
+        console.error("Busboy error:", err);
+        reject(err);
+      });
+
+      // For Firebase Functions v2, we need to handle the request body differently
+      if (req.rawBody) {
+        // If rawBody is available, use it directly
+        busboy.end(req.rawBody);
+      } else {
+        // Otherwise, pipe the request
+        req.pipe(busboy);
+      }
     });
 
     // Validate required fields

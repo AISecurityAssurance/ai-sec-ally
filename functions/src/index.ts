@@ -6,6 +6,11 @@ import sgMail from "@sendgrid/mail";
 import {Request, Response} from "express";
 import Busboy from "busboy";
 
+// Extend Express Request type to include Firebase's rawBody property
+interface FirebaseRequest extends Request {
+  rawBody?: Buffer;
+}
+
 // Initialize Firebase Admin
 admin.initializeApp();
 
@@ -145,7 +150,7 @@ export const careerApplication = onRequest({
   cors: true,
   secrets: [],
   invoker: "public"
-}, async (req: Request, res: Response) => {
+}, async (req: FirebaseRequest, res: Response) => {
   // Handle CORS
   if (corsHandler(req, res)) return;
 
@@ -225,9 +230,8 @@ export const careerApplication = onRequest({
       // Firebase Functions v2 pre-buffers the request body into req.rawBody
       // We must use busboy.end(rawBody) instead of req.pipe(busboy)
       // because the request stream has already been consumed
-      const rawBody = (req as any).rawBody as Buffer;
-      if (rawBody) {
-        busboy.end(rawBody);
+      if (req.rawBody) {
+        busboy.end(req.rawBody);
       } else {
         // Fallback for emulator or edge cases
         req.pipe(busboy);

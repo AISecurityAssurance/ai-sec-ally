@@ -12,6 +12,10 @@
         "function": "contactForm"
       },
       {
+        "source": "/api/career-application",
+        "function": "careerApplication"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

@@ -22,8 +22,8 @@ const Careers = () => {
     // Fetch job listings from the opportunities directory
     const loadJobs = async () => {
       try {
-        // Import all markdown files from opportunities directory
-        const modules = import.meta.glob('/opportunities/*.md', { as: 'raw' });
+        // Import all markdown files from public/opportunities directory
+        const modules = import.meta.glob('/public/opportunities/*.md', { as: 'raw' });
         const jobsData: JobMetadata[] = [];
 
         for (const path in modules) {

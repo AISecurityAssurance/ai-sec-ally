@@ -5,7 +5,7 @@ This directory contains job descriptions and internship opportunities for AI Sec
 ## How It Works
 
 The careers system automatically:
-- ✅ Reads all `.md` files in `/opportunities/`
+- ✅ Reads all `.md` files in `/public/opportunities/`
 - ✅ Filters by `status: "open"`
 - ✅ Generates job cards on `/careers`
 - ✅ Creates detail pages at `/careers/[slug]`
@@ -77,7 +77,7 @@ The file remains in the directory but won't appear on the careers page.
 
 1. Create an `archive/` subdirectory if it doesn't exist:
    ```bash
-   mkdir -p opportunities/archive
+   mkdir -p public/opportunities/archive
    ```
 
 2. Move old job files to the archive:
@@ -85,7 +85,7 @@ The file remains in the directory but won't appear on the careers page.
    mv "Job Title_ Old Position.md" archive/
    ```
 
-Files in `/opportunities/archive/` are ignored by the careers system.
+Files in `/public/opportunities/archive/` are ignored by the careers system.
 
 ### To Reopen a Position
 

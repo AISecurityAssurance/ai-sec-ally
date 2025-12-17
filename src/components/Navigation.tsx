@@ -11,6 +11,7 @@ const Navigation = () => {
     { to: "/insights", label: "Storm Engineering" },
     { to: "/journey", label: "Our Journey" },
     { to: "/about", label: "About" },
+    { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
   ];
 

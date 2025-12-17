@@ -157,11 +157,11 @@ export const careerApplication = onRequest({
     }
 
     // Get configuration
-    const sendGridApiKeyValue = process.env.SENDGRID_API_KEY;
+    const sendGridApiKeyValue = process.env.CAREERS_FORM_API || process.env.SENDGRID_API_KEY;
     const careersEmail = process.env.CAREERS_EMAIL || "careers@aisecurityassurance.com";
 
     if (!sendGridApiKeyValue) {
-      console.error("Missing SendGrid API Key");
+      console.error("Missing SendGrid API Key (CAREERS_FORM_API or SENDGRID_API_KEY)");
       res.status(500).json({ error: "Server configuration error" });
       return;
     }

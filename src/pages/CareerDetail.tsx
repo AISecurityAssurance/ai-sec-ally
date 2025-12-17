@@ -34,8 +34,8 @@ const CareerDetail = () => {
       }
 
       try {
-        // Import all markdown files
-        const modules = import.meta.glob('/opportunities/*.md', { as: 'raw' });
+        // Import all markdown files from public/opportunities directory
+        const modules = import.meta.glob('/public/opportunities/*.md', { as: 'raw' });
         let found = false;
 
         for (const path in modules) {

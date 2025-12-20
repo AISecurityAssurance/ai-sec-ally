@@ -9,45 +9,35 @@ const ProductRoadmap = () => {
     {
       name: "AI-Storm Horizon",
       icon: Compass,
-      tagline: "Foundation",
+      tagline: "Coming Soon",
       color: "primary",
-      description: "Start your security journey with proven methodologies and powerful automation.",
-      chooseIf: [
-        "You're securing individual applications or microservices",
-        "You want to adopt STPA-Sec + STRIDE methodology",
-        "You need formal verification for critical systems",
-        "You're building compliance documentation from scratch",
-      ],
+      description: "End-to-end systems-theoretic and STRIDE security analysis for early stage high-level design analysis or low-level code implementation analysis.",
       features: [
+        "Ingests diagrams and system documentation or small codebase",
         "STPA-Sec + STRIDE threat modeling",
-        "Intuitive UI and CLI interface",
-        "Formal mathematical security proofs",
+        "Single-level of abstraction",
+        "Simple CLI and browser-based Human-AI teaming",
+        "Formal mathematical proofs of traceability and completeness",
         "GSN assurance case documentation",
-        "Single application analysis",
-        "Standard support",
       ],
+      comingSoon: true,
     },
     {
       name: "AI-Storm Navigator",
       icon: Rocket,
-      tagline: "Full Enterprise",
+      tagline: "Planned",
       color: "purple",
-      description: "Everything in Horizon, plus enterprise scale and advanced capabilities.",
+      description: "End-to-end multi-level design and implementation analysis, bridging the chasm of abstraction, especially in software-based systems.",
       highlight: true,
-      chooseIf: [
-        "You're securing complex enterprise systems",
-        "You need multi-level hierarchical analysis",
-        "You want AI-assisted security orchestration",
-        "You require SOC 2, ISO 27001, or FedRAMP compliance",
-      ],
       features: [
-        "Everything in Horizon",
-        "Multi-level hierarchical decomposition",
-        "Auto-generated architecture diagrams",
-        "Extended formal verification",
-        "SOC 2, ISO 27001, FedRAMP support",
-        "Aisha AI orchestrator",
-        "Priority support & onboarding",
+        "Ingests diagrams, system documentation, and codebases",
+        "Unified knowledge graph representing system",
+        "Multiple levels of abstraction and focus areas",
+        "Advanced CLI and browser-based Human-AI teaming",
+        "Formal mathematical security proofs of mitigation constraint logical soundness and authentication and authorization",
+        "Trace design flaws and insecurities to the code that causes them",
+        "Demonstrate evidence of mitigation constraints in code or documentation",
+        "GSN assurance case documentation",
       ],
       comingSoon: true,
     },
@@ -96,36 +86,14 @@ const ProductRoadmap = () => {
                           {tier.tagline}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-2xl font-bold text-foreground">
-                          {tier.name}
-                        </h3>
-                        {tier.comingSoon && (
-                          <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
-                            Coming Soon
-                          </span>
-                        )}
-                      </div>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        {tier.name}
+                      </h3>
                       <p className="text-muted-foreground text-sm">
                         {tier.description}
                       </p>
                     </div>
 
-
-                    {/* Choose If Section */}
-                    <div className="mb-8">
-                      <p className="text-sm text-foreground mb-3">
-                        <span className="font-semibold">Choose {tier.name.split(" ")[1]}</span> if you:
-                      </p>
-                      <ul className="space-y-2">
-                        {tier.chooseIf.map((item, index) => (
-                          <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="text-muted-foreground/60 mt-1">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
 
                     {/* Key Features */}
                     <div>

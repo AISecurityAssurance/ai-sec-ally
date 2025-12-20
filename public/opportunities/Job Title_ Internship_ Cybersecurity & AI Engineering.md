@@ -57,9 +57,7 @@ We will work with your school to coordinate academic credit and ensure the inter
 
 Email your résumé, a brief cover letter describing your interests, and any project links to **careers@aisecurityassurance.com** with “Cybersecurity & AI Internship” in the subject. Tell us your preferred focus area (UI, security research, software engineering, or AI/ML) and include contact information for your academic advisor so we can confirm credit requirements.
 
-### **Transparency Note:** This internship is **unpaid** and intended primarily for educational purposes; we will coordinate with your school to ensure you receive appropriate credit. The internship period is tied to your academic term and will not exceed the duration needed to meet your program’s requirements. Continuing with the company beyond the internship will depend on performance and on our obtaining additional funding for paid positions. We value candidates who are excited to learn, collaborate, and contribute to our mission.
+**Transparency Note:** This internship is **unpaid** and intended primarily for educational purposes; we will coordinate with your school to ensure you receive appropriate credit. The internship period is tied to your academic term and will not exceed the duration needed to meet your program’s requirements. Continuing with the company beyond the internship will depend on performance and on our obtaining additional funding for paid positions. We value candidates who are excited to learn, collaborate, and contribute to our mission.
 
-### **Equal Employment Opportunity**
-
-AI Security Assurance is an equal opportunity employer. We do not discriminate on the basis of race, religion, gender, sexual orientation, or any other protected characteristic. We operate a drug‑free workplace.
+EEO:Equal opportunity employer, including disability and protected veterans, or other characteristics protected by law.  AI Security Assurance operates a drug free workplace. 
 

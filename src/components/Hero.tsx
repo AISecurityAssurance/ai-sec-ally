@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-security.jpg";
 import AnimatedLogo from "./AnimatedLogo";
 
@@ -60,8 +60,18 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/videos/ai-storm-horizon-demo.mp4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="hero" size="lg" className="bg-gradient-accent hover:opacity-90">
+                <Play className="mr-2 h-5 w-5" />
+                Watch Demo (9 min)
+              </Button>
+            </a>
             <Link to="/contact">
-              <Button variant="hero" size="lg">
+              <Button variant="outline" size="lg">
                 Contact Us About Early Access
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

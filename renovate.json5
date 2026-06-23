@@ -1,0 +1,29 @@
+{
+  // PILOT — drop this in at ai-sec-ally repo root as `renovate.json5`.
+  // Stack: Vite + React SPA (root package.json) + Firebase Cloud Functions
+  // (functions/package.json). Deploys to Firebase prod on push to main.
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>AISecurityAssurance/renovate-config"],
+
+  // CRITICAL: ai-sec-ally currently deploys to prod on push to main with NO test
+  // gate. Until the verification workflow exists AND branch protection requires it,
+  // automerge stays OFF — otherwise a merged bump ships straight to prod unverified.
+  // Flip this to remove the override once the gate is in place (Phase 1 of rollout).
+  "packageRules": [
+    {
+      "description": "Pilot safety: no automerge until the verification gate is required.",
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "automerge": false,
+    },
+    {
+      "description": "Radix UI moves as a family — group it.",
+      "matchPackageNames": ["/^@radix-ui//"],
+      "groupName": "radix-ui",
+    },
+    {
+      "description": "Keep frontend and Cloud Functions bumps in separate PRs.",
+      "matchFileNames": ["functions/package.json"],
+      "groupName": "cloud functions deps",
+    },
+  ],
+}

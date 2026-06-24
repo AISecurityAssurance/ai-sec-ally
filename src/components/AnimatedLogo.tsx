@@ -9,7 +9,7 @@ const AnimatedLogo = ({ className = "h-10 w-10" }: AnimatedLogoProps) => {
   return (
     <img
       src="/ai_storm_logo_transparent.png"
-      alt="AI-Storm Logo"
+      alt="AI Security Assurance logo"
       className={className}
     />
   );

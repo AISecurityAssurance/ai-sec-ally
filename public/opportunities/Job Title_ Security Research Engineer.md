@@ -3,7 +3,7 @@ title: "Security Research Engineer"
 salary: "$160,000 - $230,000"
 location: "Remote / U.S.-Based"
 type: "Full-time"
-status: "open"
+status: "closed"
 slug: "security-research-engineer"
 ---
 
@@ -15,7 +15,7 @@ USD $160,000.00/Yr. \- USD $230,000.00/Yr
 
 ### **About Us**
 
-AI Security Assurance is a new, remote‑first startup building **AI‑Storm**, an AI‑powered platform that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws that traditional tools miss. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, and organizational domains. Transparency is one of our core values: we operate as a distributed team across the United States and we’re open about our progress and challenges. To learn more about the platform’s capabilities please see our product page at [aisecurityassurance.com/products](http://aisecurityassurance.com/products).
+AI Security Assurance is a new, remote‑first startup building automated tooling that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws that traditional tools miss. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, and organizational domains. Transparency is one of our core values: we operate as a distributed team across the United States and we’re open about our progress and challenges. To learn more about the platform’s capabilities please see our product page at [aisecurityassurance.com/products](http://aisecurityassurance.com/products).
 
 As an early employee, you'll wear multiple hats typical of a startup. You’ll help build our core AI-powered analysis engine that ingests code in multiple languages, extracts structural and semantic information, and ties it back to system‑level security analysis. Working closely with our STPA‑Sec/verification experts and threat‑modelling SME, you’ll work with team members to design and implement the ingestion engine, knowledge graph, pattern‑matching and data‑flow analysis, and dataset collection and evaluation. If you thrive in a transparent, fast‑moving environment where your contributions shape the product, we’d love to hear from you.
 

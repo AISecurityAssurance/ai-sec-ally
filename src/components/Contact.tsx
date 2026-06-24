@@ -75,7 +75,7 @@ const Contact = ({ showTitle = true }: ContactProps) => {
               Ready to Build More Secure Systems?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get in touch with our security experts to learn how AI-Storm can bring provable security to your organization.
+              Get in touch with our team to learn how we can help bring provable security and safety to your systems.
             </p>
           </div>
         )}
@@ -157,7 +157,7 @@ const Contact = ({ showTitle = true }: ContactProps) => {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Get in touch</h3>
               <p className="text-muted-foreground mb-8">
-                Ready to transform your security analysis approach? Whether you're interested in AI-Storm's automated STPA-Sec and STRIDE analysis or our vision for formal verification, our team is here to help.
+                Ready to talk about security and safety assurance for your systems? Whether you're exploring our capabilities or our vision for automated, formally verified assurance, our team is here to help.
               </p>
             </div>
 

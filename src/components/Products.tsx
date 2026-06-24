@@ -1,3 +1,7 @@
+// Updated: 2026-06-23
+// Capabilities page. Product name intentionally omitted for now (product not yet defined);
+// focuses on the problem and the company's capabilities. Presented as modules with two
+// "ways in" (cyber teams vs. systems engineers). Confident present-tense framing.
 import {
   Card,
   CardContent,
@@ -9,305 +13,308 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  CheckCircle2,
+  FileSearch,
+  Network,
+  Code2,
+  BadgeCheck,
   Users,
-  Sparkles,
+  Boxes,
+  Workflow,
 } from "lucide-react";
 
-interface ProductsProps {
-  showContactButton?: boolean;
-}
+const Products = () => {
+  const pipeline = [
+    {
+      step: "1",
+      title: "Start with what you have",
+      description: "Source code, binaries, or your existing system and engineering models.",
+    },
+    {
+      step: "2",
+      title: "Recover the real design",
+      description: "Automatically reconstruct what the system actually is—not just what the documentation claims.",
+    },
+    {
+      step: "3",
+      title: "Build one model of the whole system",
+      description: "A single, unified representation that captures how every part connects and interacts.",
+    },
+    {
+      step: "4",
+      title: "Analyze for security & safety risks",
+      description: "Surface the dangerous flaws that hide in how components interact—across the whole system.",
+    },
+    {
+      step: "5",
+      title: "Produce the evidence",
+      description: "Mitigations, formal verification, and assurance cases that show what's sound and what must change.",
+    },
+    {
+      step: "6",
+      title: "Review together",
+      description: "A human-AI workspace where your experts explore, refine, and stay in control of every decision.",
+    },
+  ];
 
-const Products = ({ showContactButton = true }: ProductsProps) => {
+  const modules = [
+    {
+      icon: FileSearch,
+      name: "Sentinel",
+      tagline: "Recover the real design",
+      description:
+        "Reconstructs a system's true architecture directly from source code or binaries—so analysis starts from what's actually built, not just what was documented. Useful on its own, and the foundation for everything downstream.",
+    },
+    {
+      icon: Network,
+      name: "Whole-system analysis",
+      tagline: "Built on STPA",
+      description:
+        "Grounded in Systems-Theoretic Process Analysis (STPA)—a proven systems-engineering method—this examines the whole system for the security and safety risks that emerge from how parts interact, not just the parts themselves.",
+    },
+    {
+      icon: Code2,
+      name: "Software security analysis",
+      tagline: "The Insecure Design problem",
+      description:
+        "Brings the same analysis down to software at the implementation level—targeting the design and interaction flaws cybersecurity teams know as Insecure Design, an OWASP Top 10 risk.",
+    },
+    {
+      icon: BadgeCheck,
+      name: "Formal Verification for Security",
+      tagline: "Evidence you can trust",
+      description:
+        "Mathematically checks critical security properties—like authentication and authorization—and backs findings with formal assurance, not opinion.",
+    },
+    {
+      icon: Users,
+      name: "Human-AI Workspace",
+      tagline: "You stay in control",
+      description:
+        "A collaborative environment where automated analysis is reviewed, refined, and explored by your experts. AI assists where it earns its place; people decide.",
+    },
+    {
+      icon: Boxes,
+      name: "Integrations",
+      tagline: "Fits your toolchain",
+      description:
+        "Built on the SysML V2 modeling standard and designed to connect with the model-based software and systems engineering tools your teams already use—so assurance fits the way you already work.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Our Approach */}
-      <section className="py-24 bg-gradient-primary">
+      {/* Product hero */}
+      <section className="pt-32 pb-20 bg-gradient-hero">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Our Approach
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                A comprehensive four-phase process for systematic security analysis
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {/* Ingestion */}
-              <Card className="bg-card/80 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <span className="text-2xl font-bold text-primary">1</span>
-                    </div>
-                    <CardTitle className="text-2xl text-foreground">
-                      Ingestion
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  <p className="text-base leading-relaxed">
-                    AI-Storm reads your documentation and code and generates a unified knowledge graph representing your system.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* System Analysis */}
-              <Card className="bg-card/80 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <span className="text-2xl font-bold text-primary">2</span>
-                    </div>
-                    <CardTitle className="text-2xl text-foreground">
-                      System Analysis
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4 text-muted-foreground">
-                  <p className="text-base leading-relaxed">
-                    AI-Storm performs a step-by-step system-theoretic process (STPA-Sec) plus STRIDE analysis, generating:
-                  </p>
-                  <ul className="space-y-3 ml-2">
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">High-level system intent and security goals</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="text-base mb-2">Detailed control structure and dataflow analysis, identifying:</div>
-                        <ul className="ml-8 space-y-2">
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2">◦</span>
-                            <span>Design and architectural flaws</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2">◦</span>
-                            <span>Insecure interactions</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2">◦</span>
-                            <span>Improper access control constraints</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">Detailed causal scenarios + STRIDE categorization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">Detailed constraint and mitigation requirements</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Evidence */}
-              <Card className="bg-card/80 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <span className="text-2xl font-bold text-primary">3</span>
-                    </div>
-                    <CardTitle className="text-2xl text-foreground">
-                      Evidence
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4 text-muted-foreground">
-                  <p className="text-base leading-relaxed">
-                    AI-Storm applies formal verification to check that the system analysis is effective:
-                  </p>
-                  <ul className="space-y-3 ml-2">
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">Maintains traceability from high-level security goals to causal scenarios and mitigations</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">Proposed mitigation constraints are logically sound</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-base">Controls for authentication and authorization are in place</span>
-                    </li>
-                  </ul>
-                  <div className="pt-4 border-t border-border/50">
-                    <p className="text-base leading-relaxed mb-3">
-                      AI-Storm also checks for evidence of existing mitigation implementation, reducing human labor:
-                    </p>
-                    <ul className="space-y-3 ml-2">
-                      <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-base">Trace security vulnerabilities to source code</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-base">Perform code analysis on targeted code</span>
-                      </li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Documentation */}
-              <Card className="bg-card/80 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <span className="text-2xl font-bold text-primary">4</span>
-                    </div>
-                    <CardTitle className="text-2xl text-foreground">
-                      Documentation
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  <p className="text-base leading-relaxed">
-                    AI-Storm combines system analysis and evidence into a goal structured notation (GSN) assurance case report,
-                    providing a scaffolding for human analysts to review and document additional mitigations and controls.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm md:text-base font-semibold tracking-wider uppercase mb-4 bg-gradient-accent bg-clip-text text-transparent">
+              What we're building
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
+              Whole-system security and safety assurance—
+              <span className="block bg-gradient-accent bg-clip-text text-transparent">
+                from code or models to evidence.
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+              We're building automated tooling that proves your systems are secure and safe by design.
+              Give it your software or your system models, and it recovers the true design, finds the
+              risks that hide in how parts interact, and produces the evidence to back it up.
+            </p>
+            <Link to="/contact">
+              <Button variant="hero" size="lg" className="bg-gradient-accent hover:opacity-90">
+                Request More Info
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* The problem */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+              The most dangerous flaws are designed in.
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              The systems we rely on are assembled from many parts that each work—yet can still fail
+              together. The most damaging security and safety flaws don't live in any single component.
+              They live in how components interact, invisible to tools that examine each part alone.
+              Finding them today is slow, manual work that only a handful of experts can do—and it usually
+              stops at the design, never reaching the code.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Who Is AI-Storm For */}
+      {/* What it does — the pipeline */}
       <section className="py-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Software Systems & Beyond
+              How it works
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
-              AI-Storm provides automated STPA-Sec analysis for any system. For software systems, we go further—
-              bridging from high-level security analysis down to your actual code with formal verification.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              One automated path from what you have to evidence you can trust.
             </p>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {pipeline.map((stage) => (
+              <Card
+                key={stage.step}
+                className="bg-card/60 border-border hover:border-primary/40 transition-all duration-300"
+              >
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="bg-primary/10 p-2 rounded-lg">
+                      <span className="text-xl font-bold text-primary">{stage.step}</span>
+                    </div>
+                    <CardTitle className="text-lg text-foreground">{stage.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Left Column: Software Systems */}
+      {/* Two ways in */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Two ways in—one system
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Whether you start from software or from system models, you land in the same whole-system analysis.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <Card className="bg-card/50 border-border">
               <CardHeader>
-                <CardTitle className="text-2xl text-foreground mb-2">
-                  Software Systems
-                </CardTitle>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Code2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl text-foreground">For software & cybersecurity teams</CardTitle>
+                </div>
                 <CardDescription className="text-base">
-                  C/C++, Java, Go, Python codebases—from web apps to embedded systems
+                  Have a codebase, not a model?
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-foreground mb-1">What You Get:</p>
-                  <p className="text-muted-foreground">
-                    Full end-to-end analysis: automated STPA-Sec → Sentinel-M2 code analysis →
-                    UCA-to-code tracing → targeted SAST/DAST → formal verification → GSN assurance cases
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground mb-1">Output:</p>
-                  <p className="text-muted-foreground">
-                    Machine-readable assurance case with mathematical proofs, linking high-level security
-                    goals to verified code implementation
-                  </p>
-                </div>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  Start from source or binaries. Our tooling recovers the design and finds the
+                  interaction-level security flaws—the Insecure Design problem—without requiring
+                  systems-theory expertise from your team.
+                </p>
               </CardContent>
             </Card>
 
-            {/* Right Column: Non-Software Systems */}
             <Card className="bg-card/50 border-border">
               <CardHeader>
-                <CardTitle className="text-2xl text-foreground mb-2">
-                  Hardware, Processes & Organizations
-                </CardTitle>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Workflow className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl text-foreground">For systems engineers</CardTitle>
+                </div>
                 <CardDescription className="text-base">
-                  Medical devices, industrial control systems, operational procedures, organizational policies
+                  Already working in MBSE / MBSD?
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-foreground mb-1">What You Get:</p>
-                  <p className="text-muted-foreground">
-                    Automated STPA-Sec analysis identifying system-level security vulnerabilities in hardware
-                    components, human processes, organizational structures, and physical systems
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground mb-1">Output:</p>
-                  <p className="text-muted-foreground">
-                    Comprehensive threat analysis and security requirements—without needing specialized STPA-Sec expertise
-                  </p>
-                </div>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  Bring your models. Our tooling runs whole-system analysis across safety, security, and
+                  beyond—on the systems you're already designing, using the systems-theoretic methods you
+                  already trust.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Partner With Us */}
+      {/* The building blocks */}
       <section className="py-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <Users className="h-16 w-16 text-primary mx-auto mb-6" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              The building blocks
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Each capability delivers value on its own. Together, they form one integrated system.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {modules.map((module) => (
+              <Card
+                key={module.name}
+                className="bg-card/50 border-border hover:bg-card/70 transition-all duration-300 hover:shadow-elegant"
+              >
+                <CardHeader>
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-3">
+                    <module.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl text-foreground">{module.name}</CardTitle>
+                  <CardDescription className="text-primary font-medium">
+                    {module.tagline}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{module.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founded on proven methods */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+              Founded on methods the field already trusts
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              Systems engineers know them as Systems-Theoretic Process Analysis (STPA)—a rigorous method
+              for finding the risks that emerge from how a system's parts interact. Cybersecurity teams
+              know the same class of failure as Insecure Design, an OWASP Top 10 risk. We bring both
+              worlds together.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              We pair STPA-based, whole-system analysis to find the problem with formal verification for
+              security to prove it's addressed—following the NIST systems security engineering framework
+              (SP 800-160), and expressed in SysML V2, the modern standard for model-based systems
+              engineering.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Get Early Access
+              See what automated assurance can do for your systems.
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're building AI-Storm to bridge the gap from high-level security analysis to verified code.
-              We're looking for forward-thinking organizations to partner with us—whether as early adopters,
-              beta testers, research collaborators, or investors.
+              We're partnering with forward-thinking government and commercial teams. Let's talk about
+              your systems and what assurance could look like for them.
             </p>
-            <div className="bg-card/50 border border-border rounded-lg p-8 mb-8">
-              <p className="text-lg font-semibold text-foreground mb-4">
-                Interested in:
-              </p>
-              <ul className="text-left text-muted-foreground space-y-3 max-w-2xl mx-auto">
-                <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Getting early access to our MVP and providing feedback?</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <span>
-                    Exploring how AI-Storm fits your security workflow?
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <span>
-                    Collaborating on formal verification research?
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <span>
-                    Supporting our mission as an investor or strategic partner?
-                  </span>
-                </li>
-              </ul>
-            </div>
-            {showContactButton && (
-              <>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Let's talk about how we can work together.
-                </p>
-                <Link to="/contact">
-                  <Button variant="hero" size="lg">
-                    Contact Us to Learn More
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </>
-            )}
+            <Link to="/contact">
+              <Button variant="hero" size="lg">
+                Get in Touch
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

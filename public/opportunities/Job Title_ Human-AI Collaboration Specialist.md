@@ -3,7 +3,7 @@ title: "Human-AI Collaboration Specialist"
 salary: "$160,000 - $230,000"
 location: "Remote / U.S.-Based"
 type: "Full-time"
-status: "open"
+status: "closed"
 slug: "human-ai-collaboration-specialist"
 ---
 
@@ -15,7 +15,7 @@ USD $160,000.00/Yr. \- USD $230,000.00/Yr
 
 ### **About Us**
 
-AI Security Assurance is a new, remote‑first startup building **AI‑Storm**, an AI‑powered platform that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws that traditional tools miss. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, and organizational domains. Transparency is one of our core values: we operate as a distributed team across the United States and we’re open about our progress and challenges. To learn more about the platform’s capabilities please see our product page at [aisecurityassurance.com/products](http://aisecurityassurance.com/products).
+AI Security Assurance is a new, remote‑first startup building automated tooling that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws that traditional tools miss. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, and organizational domains. Transparency is one of our core values: we operate as a distributed team across the United States and we’re open about our progress and challenges. To learn more about the platform’s capabilities please see our product page at [aisecurityassurance.com/products](http://aisecurityassurance.com/products).
 
 As an early employee, you’ll wear multiple hats typical of a startup. You’ll research how users currently perform security analysis with existing tools, transform those insights into requirements, design and build a web‑based UI that works for both cloud and on‑premises deployments, and test it with real analysts to incorporate feedback. You will also help set up our cloud/on‑prem services, collect usage data, and evaluate how well the agents and models are performing. If you thrive in a transparent, fast‑moving environment where your contributions shape the product, we’d love to hear from you.
 

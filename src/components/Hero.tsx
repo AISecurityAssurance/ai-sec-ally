@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-security.jpg";
 import AnimatedLogo from "./AnimatedLogo";
 
@@ -27,58 +27,38 @@ const Hero = () => {
             <AnimatedLogo className="h-20 w-20 md:h-32 md:w-32" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
-            AI-Storm:
-            <span className="block text-3xl md:text-5xl bg-gradient-accent bg-clip-text text-transparent">
-              AI-powered Systems-Theoretic Operational Risk Mitigation
+          <p className="text-sm md:text-base font-semibold tracking-wider uppercase mb-6 text-muted-foreground/70">
+            AI Security Assurance
+          </p>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground leading-tight">
+            Trustworthy systems,
+            <span className="block bg-gradient-accent bg-clip-text text-transparent">
+              accelerated.
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
-            AI-Storm finds deep, systemic, and logical vulnerabilities in your systems and software—the kind that
-            memory-safe languages and traditional tools miss. We automate end-to-end security analysis from
-            high-level STPA-Sec threat modeling down to your actual source code (C/C++, Java, Go, Python),
-            and formally verify the results.
+            Imagine a world where the systems we depend on—defense, critical infrastructure, the
+            software behind every critical mission—are trustworthy by design: proven secure and
+            safe before they're ever relied on.
           </p>
 
-          <p className="text-lg md:text-xl text-muted-foreground/90 mb-6 max-w-3xl mx-auto leading-relaxed">
-            Our interactive web UI provides full transparency and control—review, refine, or override AI decisions
-            at every step with human-in-the-loop oversight when you need it.
-          </p>
-
-          <p className="text-lg md:text-xl text-muted-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            The output: a formally verified, machine-readable assurance case that either proves your system is
-            secure-by-design or pinpoints the exact logical vulnerabilities that must be fixed.
-          </p>
-
-          <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto italic">
-            Find the deep, systemic flaws that other security tools miss—in any codebase, from new systems to legacy code.
-          </p>
-
-          <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto italic">
-            We address the OWASP Top 10 "Insecure Design" category, bridging system-level design and implementation to surface design flaws early.
+          <p className="text-lg md:text-xl text-muted-foreground/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+            That's the world we're building. Our mission is to accelerate the delivery of trustworthy
+            systems—assured for both security and safety, across the whole system and its entire lifecycle.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="/videos/ai-storm-horizon-demo.mp4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/products">
               <Button variant="hero" size="lg" className="bg-gradient-accent hover:opacity-90">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo (9 min)
-              </Button>
-            </a>
-            <Link to="/contact">
-              <Button variant="outline" size="lg">
-                Contact Us About Early Access
+                Learn What We're Building
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/products">
+            <Link to="/contact">
               <Button variant="outline" size="lg">
-                Learn About AI-Storm
+                Get in Touch
               </Button>
             </Link>
           </div>

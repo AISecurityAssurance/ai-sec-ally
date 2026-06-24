@@ -7,9 +7,8 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { to: "/products", label: "Products" },
-    { to: "/insights", label: "Storm Engineering" },
-    { to: "/journey", label: "Our Journey" },
+    { to: "/", label: "Home" },
+    { to: "/products", label: "Capabilities" },
     { to: "/about", label: "About" },
     { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },

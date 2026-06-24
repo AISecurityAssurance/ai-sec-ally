@@ -1,19 +1,17 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import VisionSection from "@/components/VisionSection";
 import WhyAIStorm from "@/components/WhyAIStorm";
-import ProductRoadmap from "@/components/ProductRoadmap";
-import Products from "@/components/Products";
-import Contact from "@/components/Contact";
+import ClosingCTA from "@/components/ClosingCTA";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <VisionSection />
       <WhyAIStorm />
-      <ProductRoadmap />
-      <Products showContactButton={false} />
-      <Contact showTitle={false} />
+      <ClosingCTA />
     </div>
   );
 };

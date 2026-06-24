@@ -15,7 +15,7 @@ slug: "internship-cybersecurity-ai-engineering"
 
 ### **About Us**
 
-AI Security Assurance is a new, remote‑first startup building **AI‑Storm**, an AI‑powered platform that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, hardware, and organizational domains. We operate as a distributed team across the United States and are open about our progress and challenges.
+AI Security Assurance is a new, remote‑first startup building automated tooling that bridges high‑level systems‑theoretic security analysis with actual source code to reveal design flaws. Our mission is to help engineers design and verify secure systems across software, cyber‑physical, hardware, and organizational domains. We operate as a distributed team across the United States and are open about our progress and challenges.
 
 ### **Internship Overview**
 

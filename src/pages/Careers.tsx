@@ -68,11 +68,12 @@ const Careers = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Join Us in Revolutionizing Security Analysis
+              Get in early. Build what matters.
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              We're building AI-Storm to make provable security accessible to every development team.
-              Join our remote-first team and help bridge the chasm from high-level security analysis to verified code.
+              We're a small, early-stage team building automated tools that accelerate the delivery of
+              trustworthy systems—secure and safe by design. Join us remote-first to get your hands dirty,
+              shape the product from the ground up, and make an outsized impact.
             </p>
           </div>
         </div>
@@ -83,15 +84,15 @@ const Careers = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center text-foreground">Why Join AI Security Assurance</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <Card className="bg-card/50 border-border">
                 <CardHeader>
-                  <CardTitle className="text-xl text-foreground">Cutting-Edge Technical Work</CardTitle>
+                  <CardTitle className="text-xl text-foreground">Work That Matters</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Work on 5 integrated innovations combining AI, formal verification, and systems-theoretic
-                    security analysis. Solve real research problems at the intersection of AI and cybersecurity.
+                    Tackle hard, real problems at the intersection of systems engineering, cybersecurity,
+                    formal methods, and AI—work that directly advances how trustworthy systems get built.
                   </p>
                 </CardContent>
               </Card>
@@ -110,27 +111,16 @@ const Careers = () => {
 
               <Card className="bg-card/50 border-border">
                 <CardHeader>
-                  <CardTitle className="text-xl text-foreground">Early-Stage Impact</CardTitle>
+                  <CardTitle className="text-xl text-foreground">Get In Early &amp; Make an Impact</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Your contributions directly shape the product. Wear multiple hats in a fast-moving startup
-                    environment where your work makes a difference.
+                    Join a startup at the ground floor. Wear multiple hats, get your hands dirty, and help
+                    shape the product, the culture, and the direction—where your work has a direct, visible impact.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/50 border-border">
-                <CardHeader>
-                  <CardTitle className="text-xl text-foreground">Comprehensive Benefits</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Health/Dental/Vision, 401(k), Life Insurance, Short-Term and Long-Term Disability coverage.
-                    Competitive salary and occasional travel opportunities.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

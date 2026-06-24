@@ -1,0 +1,90 @@
+# Verification gate for ai-sec-ally — what Renovate auto-merge waits on.
+#
+# Two independent jobs that BOTH must pass (set both as required status checks in
+# branch protection on main). Together they cover the two halves of this repo:
+#   - frontend-gate: build the SPA, deploy it to an ephemeral Firebase preview
+#     channel, and prove it boots / renders / has no critical a11y violations.
+#   - functions-gate: lint + build the Cloud Functions so a backend dependency
+#     bump (form-data, grpc-js, protobufjs, ...) can't merge green behind a
+#     passing frontend.
+#
+# Only once both are required does flipping Renovate automerge back on become safe.
+name: Dependency Gate
+
+on:
+  pull_request:
+    branches: [main, master]
+
+# Least privilege. id-token for Firebase auth; pull-requests for the preview-URL comment.
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+  checks: write
+
+jobs:
+  frontend-gate:
+    runs-on: ubuntu-latest # Linux only — macOS bills 10x against the 2,000-min pool.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # CI:false mirrors the production deploy — the build treats warnings as warnings,
+      # not errors, so a transitive bump's new lint warning doesn't fail the gate spuriously.
+      - name: Build SPA
+        run: npm run build
+        env:
+          CI: false
+
+      # Deploy the built dist/ to a short-lived preview channel unique to this PR.
+      # The returned URL is what we run the real browser checks against — far more
+      # honest than testing a local dev server.
+      - name: Deploy preview channel
+        id: preview
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.GCP_SA_KEY }} # TODO(confirm): SA needs Firebase Hosting Admin
+          projectId: active-tome-467816-s6 # TODO(confirm): inferred from functions/.env.<projectId>
+          expires: 3d
+          channelId: pr-${{ github.event.number }}
+
+      - name: Install Playwright (chromium only)
+        run: npx playwright install --with-deps chromium
+
+      # Smoke + accessibility against the live preview URL.
+      - name: Run e2e gate
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ steps.preview.outputs.details_url }}
+
+  functions-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
+
+      - name: Install functions dependencies
+        run: npm ci
+        working-directory: ./functions
+
+      # Mirror firebase.json predeploy — if a backend bump breaks lint or the TS
+      # build, catch it here instead of in a prod deploy.
+      - name: Lint + build functions
+        run: |
+          npm run lint
+          npm run build
+        working-directory: ./functions
+      # TODO: add a functions emulator smoke (invoke /api/contact) for real backend
+      # coverage. Build-only catches type/dep breakage but not runtime regressions.

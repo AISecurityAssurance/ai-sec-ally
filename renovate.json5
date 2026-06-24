@@ -1,19 +1,60 @@
 {
-  // PILOT — drop this in at ai-sec-ally repo root as `renovate.json5`.
+  // ai-sec-ally Renovate config — INLINED, deliberately not extending the shared org preset.
+  //
+  // Why inline: the org preset lives in a PRIVATE repo (AISecurityAssurance/renovate-config),
+  // and Renovate refuses to use an auth token when processing a PUBLIC repo (security by
+  // design — so a leaked token can't reach private repos). A public repo therefore gets a 404
+  // fetching a private preset: "Cannot find preset's package". See renovatebot/renovate#26300.
+  // ai-sec-ally is the only public repo onboarded, and it needs none of the preset's
+  // Python/Sentinel `ignorePaths` anyway, so inlining the relevant policy is the clean fix.
+  // The private fleet keeps extending the shared preset (private→private authenticates fine).
+  //
   // Stack: Vite + React SPA (root package.json) + Firebase Cloud Functions
   // (functions/package.json). Deploys to Firebase prod on push to main.
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>AISecurityAssurance/renovate-config"],
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard", // one tracking issue — fleet visibility
+    ":semanticCommits",     // feat:/fix:/chore: titles, matches our git convention
+  ],
 
-  // CRITICAL: ai-sec-ally currently deploys to prod on push to main with NO test
-  // gate. Until the verification workflow exists AND branch protection requires it,
-  // automerge stays OFF — otherwise a merged bump ships straight to prod unverified.
-  // Flip this to remove the override once the gate is in place (Phase 1 of rollout).
+  "timezone": "America/New_York",
+  "schedule": ["before 6am on monday"], // batch once a week → fewer CI runs
+
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "rebaseWhen": "conflicted",
+  "lockFileMaintenance": { "enabled": true, "schedule": ["before 6am on monday"] },
+  "labels": ["dependencies"],
+
+  // Unlike the private fleet (which must use Renovate self-merge), ai-sec-ally is PUBLIC and
+  // has branch protection requiring frontend-gate + functions-gate — so it can use GitHub's
+  // native auto-merge, the stronger enforced-gate model. (Only takes effect once a rule below
+  // sets automerge:true; today everything is held off by the pilot-safety rule.)
+  "platformAutomerge": true,
+
+  "vulnerabilityAlerts": { "labels": ["security"], "automerge": false },
+  "osvVulnerabilityAlerts": true,
+
   "packageRules": [
     {
-      "description": "Pilot safety: no automerge until the verification gate is required.",
+      // PILOT SAFETY: automerge stays OFF until we've watched one real Renovate PR pass the
+      // gate (rollout Step 5). Then narrow this to enable automerge:true for patch/minor (Step 4).
+      "description": "Pilot safety: no automerge until the gate is proven on a real PR.",
       "matchUpdateTypes": ["patch", "minor", "major"],
       "automerge": false,
+    },
+    {
+      "description": "Group non-major dev dependencies into a single PR.",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dev dependencies (non-major)",
+    },
+    {
+      "description": "Major upgrades never automerge — flag for human review.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "addLabels": ["major-review"],
     },
     {
       "description": "Radix UI moves as a family — group it.",

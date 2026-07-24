@@ -1,7 +1,7 @@
-// Updated: 2026-06-23
-// Capabilities page. Product name intentionally omitted for now (product not yet defined);
-// focuses on the problem and the company's capabilities. Presented as modules with two
-// "ways in" (cyber teams vs. systems engineers). Confident present-tense framing.
+// Updated: 2026-07-24
+// AI-Storm Navigator product page. Leads with the elevator pitch and reintroduces the product
+// name here (product page only; the homepage stays name-neutral because the company may have
+// more than one product or research thread). Plain grammar, no em-dashes.
 import {
   Card,
   CardContent,
@@ -32,7 +32,7 @@ const Products = () => {
     {
       step: "2",
       title: "Recover the real design",
-      description: "Automatically reconstruct what the system actually is—not just what the documentation claims.",
+      description: "Automatically reconstruct what the system actually is, not just what the documentation claims.",
     },
     {
       step: "3",
@@ -42,7 +42,7 @@ const Products = () => {
     {
       step: "4",
       title: "Analyze for security & safety risks",
-      description: "Surface the dangerous flaws that hide in how components interact—across the whole system.",
+      description: "Surface the dangerous flaws that hide in how components interact, across the whole system.",
     },
     {
       step: "5",
@@ -62,42 +62,42 @@ const Products = () => {
       name: "Sentinel",
       tagline: "Recover the real design",
       description:
-        "Reconstructs a system's true architecture directly from source code or binaries—so analysis starts from what's actually built, not just what was documented. Useful on its own, and the foundation for everything downstream.",
+        "Reconstructs a system's true architecture directly from source code or binaries, so analysis starts from what's actually built, not just what was documented. Useful on its own, and the foundation for everything downstream.",
     },
     {
       icon: Network,
       name: "Whole-system analysis",
       tagline: "Built on STPA",
       description:
-        "Grounded in Systems-Theoretic Process Analysis (STPA)—a proven systems-engineering method—this examines the whole system for the security and safety risks that emerge from how parts interact, not just the parts themselves.",
+        "Grounded in Systems-Theoretic Process Analysis (STPA), a proven systems-engineering method. It examines the whole system for the security and safety risks that emerge from how parts interact, not just the parts themselves.",
     },
     {
       icon: Code2,
       name: "Software security analysis",
       tagline: "The Insecure Design problem",
       description:
-        "Brings the same analysis down to software at the implementation level—targeting the design and interaction flaws cybersecurity teams know as Insecure Design, an OWASP Top 10 risk.",
+        "Brings the same analysis down to software at the implementation level, targeting the design and interaction flaws cybersecurity teams know as Insecure Design, an OWASP Top 10 risk.",
     },
     {
       icon: BadgeCheck,
       name: "Formal Verification for Security",
       tagline: "Evidence you can trust",
       description:
-        "Mathematically checks critical security properties—like authentication and authorization—and backs findings with formal assurance, not opinion.",
+        "Mathematically checks critical security properties, like authentication and authorization, and backs findings with formal assurance, not opinion.",
     },
     {
       icon: Users,
       name: "Human-AI Workspace",
       tagline: "You stay in control",
       description:
-        "A collaborative environment where automated analysis is reviewed, refined, and explored by your experts. AI assists where it earns its place; people decide.",
+        "A collaborative environment where automated analysis is reviewed, refined, and explored by your experts. AI assists where it earns its place. People decide.",
     },
     {
       icon: Boxes,
       name: "Integrations",
       tagline: "Fits your toolchain",
       description:
-        "Built on the SysML V2 modeling standard and designed to connect with the model-based software and systems engineering tools your teams already use—so assurance fits the way you already work.",
+        "Built on the SysML V2 modeling standard and designed to connect with the model-based software and systems engineering tools your teams already use, so assurance fits the way you already work.",
     },
   ];
 
@@ -108,18 +108,19 @@ const Products = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm md:text-base font-semibold tracking-wider uppercase mb-4 bg-gradient-accent bg-clip-text text-transparent">
-              What we're building
+              AI-Storm Navigator
             </p>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
-              Whole-system security and safety assurance—
+              Automated, model-based
               <span className="block bg-gradient-accent bg-clip-text text-transparent">
-                from code or models to evidence.
+                systems assurance.
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-              We're building automated tooling that proves your systems are secure and safe by design.
-              Give it your software or your system models, and it recovers the true design, finds the
-              risks that hide in how parts interact, and produces the evidence to back it up.
+              Today's technologies are complex, integrated, interconnected systems and systems of systems.
+              This creates the perfect storm for new risks that lie in the seams where components interact.
+              AI-Storm Navigator identifies those risks, generates evidence that the system is trustworthy,
+              and keeps that evidence current as the system changes.
             </p>
             <Link to="/contact">
               <Button variant="hero" size="lg" className="bg-gradient-accent hover:opacity-90">
@@ -139,17 +140,17 @@ const Products = () => {
               The most dangerous flaws are designed in.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The systems we rely on are assembled from many parts that each work—yet can still fail
+              The systems we rely on are assembled from many parts that each work, yet can still fail
               together. The most damaging security and safety flaws don't live in any single component.
               They live in how components interact, invisible to tools that examine each part alone.
-              Finding them today is slow, manual work that only a handful of experts can do—and it usually
+              Finding them today is slow, manual work that only a handful of experts can do, and it usually
               stops at the design, never reaching the code.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What it does — the pipeline */}
+      {/* What it does: the pipeline */}
       <section className="py-24 bg-gradient-primary">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -188,7 +189,7 @@ const Products = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Two ways in—one system
+              Two ways in, one system
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Whether you start from software or from system models, you land in the same whole-system analysis.
@@ -209,8 +210,8 @@ const Products = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Start from source or binaries. Our tooling recovers the design and finds the
-                  interaction-level security flaws—the Insecure Design problem—without requiring
+                  Start from source or binaries. Navigator recovers the design and finds the
+                  interaction-level security flaws, the Insecure Design problem, without requiring
                   systems-theory expertise from your team.
                 </p>
               </CardContent>
@@ -230,8 +231,8 @@ const Products = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Bring your models. Our tooling runs whole-system analysis across safety, security, and
-                  beyond—on the systems you're already designing, using the systems-theoretic methods you
+                  Bring your models. Navigator runs whole-system analysis across safety, security, and
+                  beyond, on the systems you're already designing, using the systems-theoretic methods you
                   already trust.
                 </p>
               </CardContent>
@@ -248,7 +249,7 @@ const Products = () => {
               The building blocks
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Each capability delivers value on its own. Together, they form one integrated system.
+              Each capability delivers value on its own. Together, they form AI-Storm Navigator.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -283,14 +284,14 @@ const Products = () => {
               Founded on methods the field already trusts
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Systems engineers know them as Systems-Theoretic Process Analysis (STPA)—a rigorous method
+              Systems engineers know them as Systems-Theoretic Process Analysis (STPA), a rigorous method
               for finding the risks that emerge from how a system's parts interact. Cybersecurity teams
               know the same class of failure as Insecure Design, an OWASP Top 10 risk. We bring both
               worlds together.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               We pair STPA-based, whole-system analysis to find the problem with formal verification for
-              security to prove it's addressed—following the NIST systems security engineering framework
+              security to prove it's addressed, following the NIST systems security engineering framework
               (SP 800-160), and expressed in SysML V2, the modern standard for model-based systems
               engineering.
             </p>
@@ -303,7 +304,7 @@ const Products = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              See what automated assurance can do for your systems.
+              See what AI-Storm Navigator can do for your systems.
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We're partnering with forward-thinking government and commercial teams. Let's talk about

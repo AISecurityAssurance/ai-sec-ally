@@ -21,8 +21,10 @@
   "timezone": "America/New_York",
   "schedule": ["before 6am on monday"], // batch once a week → fewer CI runs
 
-  "prConcurrentLimit": 5,
-  "prHourlyLimit": 2,
+  // Kept in step with the shared preset (renovate-config#3). 45 updates were
+  // queued behind a limit of 5, which is ~9 weeks to clear this repo alone.
+  "prConcurrentLimit": 20,
+  "prHourlyLimit": 5,
   "rebaseWhen": "conflicted",
   "lockFileMaintenance": { "enabled": true, "schedule": ["before 6am on monday"] },
   "labels": ["dependencies"],

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, Upload, X } from "lucide-react";
+import { CheckCircle2, Loader2, Upload, X } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
 interface CareerApplicationFormProps {
@@ -23,6 +23,8 @@ const CareerApplicationForm = ({ jobTitle }: CareerApplicationFormProps) => {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [coverLetterFile, setCoverLetterFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -76,6 +78,10 @@ const CareerApplicationForm = ({ jobTitle }: CareerApplicationFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Re-entrancy guard: the disabled button relies on a re-render, so a fast
+    // double-click can invoke this handler twice. Bail out synchronously.
+    if (isSubmitting || isSubmitted) return;
+
     if (!resumeFile) {
       toast({
         title: "Resume required",
@@ -111,10 +117,12 @@ const CareerApplicationForm = ({ jobTitle }: CareerApplicationFormProps) => {
       const result = await response.json();
 
       if (response.ok) {
-        toast({
-          title: "Application submitted!",
-          description: result.message || "We'll review your application and get back to you soon.",
-        });
+        // Show a persistent inline success panel (replaces the form) instead of
+        // relying on an ephemeral toast — users who missed the toast saw a
+        // suddenly-empty form, assumed failure, and resubmitted (observed
+        // duplicate rate ~30%). Do NOT remove the panel in favor of a toast.
+        setSubmittedEmail(formData.email);
+        setIsSubmitted(true);
         // Reset form
         setFormData({
           firstName: "",
@@ -144,6 +152,39 @@ const CareerApplicationForm = ({ jobTitle }: CareerApplicationFormProps) => {
       setIsSubmitting(false);
     }
   };
+
+  if (isSubmitted) {
+    return (
+      <Card className="bg-card/50 border-border">
+        <CardContent className="pt-6">
+          <div className="flex flex-col items-center text-center space-y-4 py-8" role="status" aria-live="polite">
+            <CheckCircle2 className="h-12 w-12 text-primary" />
+            <h3 className="text-2xl font-semibold text-foreground">Application received</h3>
+            <p className="text-muted-foreground max-w-md">
+              Thank you for applying for the <strong>{jobTitle}</strong> position.
+              We'll review your application and reply at{' '}
+              <strong>{submittedEmail}</strong>.
+            </p>
+            <p className="text-sm text-muted-foreground max-w-md">
+              You're all set — there's no need to submit again. If you don't hear from
+              us, you can reach us at{' '}
+              <a href="mailto:careers@aisecurityassurance.com" className="text-primary hover:underline">
+                careers@aisecurityassurance.com
+              </a>
+            </p>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsSubmitted(false)}
+            >
+              Submit another application
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="bg-card/50 border-border">

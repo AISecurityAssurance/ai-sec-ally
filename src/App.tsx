@@ -15,6 +15,7 @@ import AiDrivenStpaSecIncidentResponse from "./pages/AiDrivenStpaSecIncidentResp
 import ResearchLibrary from "./pages/ResearchLibrary";
 import Careers from "./pages/Careers";
 import CareerDetail from "./pages/CareerDetail";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

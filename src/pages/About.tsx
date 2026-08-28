@@ -1,4 +1,4 @@
-// Updated: 2026-06-23
+// Updated: 2026-08-27
 // Team-focused About page. Data-driven roster (3 current + 1 incoming). Headshots load from
 // /public/team/<slug>.jpg with a graceful initials fallback until photos are added.
 import { useState } from "react";
@@ -119,7 +119,7 @@ const About = () => {
           </div>
           <div className="text-center mt-10">
             <a
-              href="/opportunities/Capability-Statement-23June2026.pdf"
+              href="/opportunities/Capability-Statement-Templates-v2-27August2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download

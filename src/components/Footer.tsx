@@ -1,4 +1,4 @@
-// Created: 2026-08-27
+// Created: 2026-08-27; Updated: 2026-09-12
 // Global site footer, rendered on every page. Keeps the Capability Statement and contact
 // info one click away so customers (especially government) never have to search for them.
 // Plain grammar, no em-dashes.
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileDown, Mail } from "lucide-react";
 
-const CAPABILITY_STATEMENT = "/opportunities/Capability-Statement-Templates-v2-27August2026.pdf";
+const CAPABILITY_STATEMENT = "/opportunities/Capability-Statement-Templates-v2-12September2026.pdf";
 
 const Footer = () => {
   const year = new Date().getFullYear();
